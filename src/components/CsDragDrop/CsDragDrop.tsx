@@ -99,13 +99,13 @@ export function CsDragDrop({
         4,
         CS_DRAG_DROP_REVEAL_HEIGHTS[4],
         <CsSection heading={c.process.heading}>
-          <p>Ideation</p>
+          <p className={blockStyles.subheading}>Ideation</p>
           <ul>
             {c.process.ideation.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p>Exploration:</p>
+          <p className={blockStyles.subheading}>Exploration:</p>
           <ul className={blockStyles.nestedList}>
             <li>{c.process.explorationIntro}</li>
             <ul>
@@ -118,10 +118,16 @@ export function CsDragDrop({
             </ul>
           </ul>
           <figure className={blockStyles.processMedia}>
-            <img src={c.process.prototype.src} alt="" />
+            <video
+              src={c.process.prototype.src}
+              controls
+              playsInline
+              preload="metadata"
+              aria-label={c.process.prototype.caption}
+            />
             <figcaption>{c.process.prototype.caption}</figcaption>
           </figure>
-          <p>Collaboration:</p>
+          <p className={blockStyles.subheading}>Collaboration:</p>
           <ul>
             <li>{c.process.collaboration}</li>
           </ul>

@@ -57,7 +57,7 @@ export function CsKeyboardNav({
         CS_KEYBOARD_NAV_REVEAL_HEIGHTS[1],
         <CsSection heading={c.research.heading}>
           <div className={blockStyles.researchRow}>
-            <div>
+            <div className={blockStyles.researchCopy}>
               <p>
                 <span className={blockStyles.label}>Methodology:</span>
               </p>
@@ -102,26 +102,34 @@ export function CsKeyboardNav({
         3,
         CS_KEYBOARD_NAV_REVEAL_HEIGHTS[3],
         <CsSection heading={c.process.heading}>
-          <p>Ideation</p>
+          <p className={blockStyles.subheading}>Ideation</p>
           <ul>
             <li>{c.process.ideation}</li>
           </ul>
-          <p>Exploration:</p>
+          <p className={blockStyles.subheading}>Exploration:</p>
           <ul>
             <li>{c.process.explorationIntro}</li>
           </ul>
           <div className={blockStyles.processSplit}>
-            <ul>
-              {c.process.explorationBullets.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <figure className={blockStyles.processMedia}>
-              <img src={c.process.prototype.src} alt="" />
+            <div className={blockStyles.processSplitCopy}>
+              <ul>
+                {c.process.explorationBullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <figure className={blockStyles.processSplitMedia}>
+              <video
+                src={c.process.prototype.src}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={c.process.prototype.caption}
+              />
               <figcaption>{c.process.prototype.caption}</figcaption>
             </figure>
           </div>
-          <p>Collaboration:</p>
+          <p className={blockStyles.subheading}>Collaboration:</p>
           <ul>
             <li>{c.process.collaboration}</li>
           </ul>
@@ -131,14 +139,20 @@ export function CsKeyboardNav({
         4,
         CS_KEYBOARD_NAV_REVEAL_HEIGHTS[4],
         <CsSection heading={c.solution.heading}>
-          <div className={blockStyles.solutionRow}>
+          <div className={blockStyles.solutionRowEqual}>
             <div className={blockStyles.solutionText}>
               {c.solution.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <figure className={blockStyles.solutionImage}>
-              <img src={c.solution.image.src} alt={c.solution.image.alt} />
+            <figure className={blockStyles.solutionMedia}>
+              <video
+                src={c.solution.image.src}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={c.solution.image.alt}
+              />
             </figure>
           </div>
         </CsSection>,

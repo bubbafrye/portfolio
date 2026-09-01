@@ -78,7 +78,8 @@ export const csDragDropCaseStudy = {
       },
     ],
     prototype: {
-      src: `${base}assets/cs-drag-drop/prototype.png`,
+      type: "video" as const,
+      src: `${base}assets/drag-drop-demo.mp4`,
       caption: "Recording of a prototype built in Animate for testing alternate drag behaviors.",
     },
     collaboration:
@@ -93,8 +94,8 @@ export const csDragDropCaseStudy = {
       "The logical choice was Click-stick, and we moved forward with it.  With some small tuning post-release, this became a default behavior added to all drag interactions moving forward.",
     ],
     image: {
-      src: `${base}assets/cs-drag-drop/solution-table.png`,
-      alt: "Comparison table of click-stick versus long-press",
+      src: `${base}assets/cs-drag-drop/solution.png`,
+      alt: "",
     },
   },
   results: {

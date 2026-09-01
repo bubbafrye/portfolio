@@ -62,7 +62,8 @@ export const csKeyboardNavCaseStudy = {
       "After further refinement, I then presented that prototype to a panel of sight-impaired users and gave them a series of tasks to complete, which they did fluidly.",
     ],
     prototype: {
-      src: `${base}assets/cs-keyboard-nav/prototype.png`,
+      type: "video" as const,
+      src: `${base}assets/video/keyboard-nav-prototype.mp4`,
       caption: "Recording of a prototype built in Animate for testing alternate drag behaviors.",
     },
     collaboration:
@@ -75,7 +76,8 @@ export const csKeyboardNavCaseStudy = {
       "This gave the user the ability to navigate the page quickly, while also being able to drill in to a nested area with minimal effort.  By mapping this flow to common ARIA patterns, we laid the groundwork for screen reader support along the way.",
     ],
     image: {
-      src: `${base}assets/cs-keyboard-nav/solution-lesson.png`,
+      type: "video" as const,
+      src: `${base}assets/video/rationalRods.mp4`,
       alt: "Video of live lesson, navigated via keyboard using arrows, tab and space",
     },
   },
