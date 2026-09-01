@@ -1,0 +1,15 @@
+.themeSwitcher {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: var(--font-secondary);
+}
+
+.themeOption {
+  margin-right: 8px;
+}

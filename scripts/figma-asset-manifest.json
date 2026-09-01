@@ -1,0 +1,91 @@
+{
+  "rules": [
+    "Tile hero PNGs must be exported from the inner image node — never the tile-up frame. Tile frames include title and project copy that React already renders.",
+    "Expanded panel body images: export the image fill node only, not the surrounding text+image row frame.",
+    "After downloading, run: npm run assets:validate"
+  ],
+  "fileKey": "QTjGSbgI2sRCoWy6YDcn1t",
+  "assets": [
+    {
+      "path": "public/assets/tiles/a11y-tile.png",
+      "nodeId": "1522:1156",
+      "exportScope": "illustration-only",
+      "doNotUse": "1522:1096",
+      "aspectRatio": { "min": 0.9, "max": 1.1 }
+    },
+    {
+      "path": "public/assets/tiles/park-bg.png",
+      "nodeId": "1524:1612",
+      "exportScope": "layer",
+      "layer": "bg"
+    },
+    {
+      "path": "public/assets/tiles/park-fg.png",
+      "nodeId": "1524:1612",
+      "exportScope": "layer",
+      "layer": "fg"
+    },
+    {
+      "path": "public/assets/tiles/blast-bg.png",
+      "nodeId": "1524:1830",
+      "exportScope": "layer",
+      "layer": "bg"
+    },
+    {
+      "path": "public/assets/tiles/blast-mid.png",
+      "nodeId": "1524:1830",
+      "exportScope": "layer",
+      "layer": "mid"
+    },
+    {
+      "path": "public/assets/tiles/blast-fg.png",
+      "nodeId": "1524:1830",
+      "exportScope": "layer",
+      "layer": "fg"
+    },
+    {
+      "path": "public/assets/tiles/team-tile.png",
+      "nodeId": "1524:2041",
+      "exportScope": "illustration-only",
+      "doNotUse": "1524:2025"
+    },
+    {
+      "path": "public/assets/tiles/tools-tile.png",
+      "nodeId": "1524:2455",
+      "exportScope": "illustration-only",
+      "doNotUse": "1524:2236"
+    },
+    {
+      "path": "public/assets/main-page/a11y-hero.png",
+      "nodeId": "1522:1156",
+      "exportScope": "illustration-only",
+      "notes": "Same illustration as tile; React applies flip via CSS"
+    },
+    {
+      "path": "public/assets/main-page/park-hero.png",
+      "nodeId": "1367:1051",
+      "exportScope": "illustration-only"
+    },
+    {
+      "path": "public/assets/main-page/blast-hero.png",
+      "nodeId": "1430:2289",
+      "exportScope": "illustration-only"
+    },
+    {
+      "path": "public/assets/a11y/screen-reader.png",
+      "nodeId": "1367:1044",
+      "exportScope": "raw-image",
+      "notes": "Export raw ARIA code screenshot from screen-reader instance subtree, not the full row frame"
+    },
+    {
+      "path": "public/assets/sections/team.png",
+      "nodeId": "1402:2544",
+      "exportScope": "illustration-only"
+    },
+    {
+      "path": "public/assets/sections/tools.png",
+      "nodeId": "1516:5609",
+      "exportScope": "illustration-only"
+    }
+  ]
+}

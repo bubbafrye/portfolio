@@ -1,0 +1,64 @@
+.mini-block {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 330px;
+  min-height: 210px;
+  padding: var(--layout-mini-block-py) var(--spacing-med);
+  border-radius: var(--panel-radius);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.surface {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--panel-radius);
+  background: var(--primary-btn-overlay-color1);
+  pointer-events: none;
+}
+
+.insetShadow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: var(--mini-block-inset-shadow);
+}
+
+.text-block {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--spacing-med);
+  align-items: flex-start;
+  min-width: 1px;
+  padding: 0 var(--spacing-xs);
+  color: var(--panel-font-color);
+  word-break: break-word;
+}
+
+.header {
+  margin: 0;
+  width: 280px;
+  max-width: 100%;
+  min-height: 45px;
+  font-family: var(--font-primary);
+  font-size: var(--font-h2);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.body {
+  margin: 0;
+  min-height: 100px;
+  width: 100%;
+  font-family: var(--font-secondary);
+  font-size: var(--font-med);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

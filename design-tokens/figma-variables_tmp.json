@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 1,
+  "fileName": "portfolio",
+  "collections": [
+    {
+      "id": "VariableCollectionId:1:28",
+      "name": "Collection 1",
+      "modes": [
+        {
+          "id": "1:0",
+          "name": "aqua"
+        },
+        {
+          "id": "1:1",
+          "name": "wire"
+        },
+        {
+          "id": "420:0",
+          "name": "hackSlash"
+        }
+      ],
+      "variables": [
+        {
+          "name": "body/anim/expand",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 350,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "body/anim/fade-in",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 800,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "body/anim/slide-distance",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 50,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "body/anim/slide-in",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 500,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "body/anim/timing-stagger",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 100,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "body/grad1_a",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#cbf3f0",
+            "wire": "#cbf3f0",
+            "hackSlash": "#cbf3f0"
+          }
+        },
+        {
+          "name": "body/grad1_b",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#2fc3b6",
+            "wire": "#ffffff",
+            "hackSlash": "#ffffff"
+          }
+        },
+        {
+          "name": "color-null",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffffff00",
+            "wire": "#ffffff00",
+            "hackSlash": "#ffffff00"
+          }
+        },
+        {
+          "name": "font/color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffffff",
+            "wire": "#4b4b4b",
+            "hackSlash": "#e3f0ca"
+          }
+        },
+        {
+          "name": "font/h1",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 38,
+            "wire": 42,
+            "hackSlash": 36
+          }
+        },
+        {
+          "name": "font/h2",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 32,
+            "wire": 36,
+            "hackSlash": 30
+          }
+        },
+        {
+          "name": "font/h3",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 26,
+            "wire": 28,
+            "hackSlash": 24
+          }
+        },
+        {
+          "name": "font/med",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 16,
+            "wire": 16,
+            "hackSlash": 15
+          }
+        },
+        {
+          "name": "font/primary",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "aqua": "Idiqlat",
+            "wire": "Arial",
+            "hackSlash": "DIABLO"
+          }
+        },
+        {
+          "name": "font/prinary-size",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 36,
+            "wire": 0,
+            "hackSlash": 32
+          }
+        },
+        {
+          "name": "font/secondary",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "aqua": "Lato",
+            "wire": "noto sans",
+            "hackSlash": "PT Serif"
+          }
+        },
+        {
+          "name": "font/secondary-size",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 0,
+            "wire": 0,
+            "hackSlash": 18
+          }
+        },
+        {
+          "name": "font/sm",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 12,
+            "wire": 12,
+            "hackSlash": 12
+          }
+        },
+        {
+          "name": "font/xsm",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 10,
+            "wire": 10,
+            "hackSlash": 10
+          }
+        },
+        {
+          "name": "number-null",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 0,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "page-surface-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#2479a2",
+            "wire": "#e1e1e1",
+            "hackSlash": "#800000"
+          }
+        },
+        {
+          "name": "page-surface-color1-fade",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#2479a200",
+            "wire": "#e1e1e100",
+            "hackSlash": "#80000000"
+          }
+        },
+        {
+          "name": "page-surface-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#094e49",
+            "wire": "#d9d9d9",
+            "hackSlash": "#320000"
+          }
+        },
+        {
+          "name": "panel/body",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "aqua": "foo",
+            "wire": "foo",
+            "hackSlash": "foo"
+          }
+        },
+        {
+          "name": "panel/font-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#085273",
+            "wire": "#4b4b4b",
+            "hackSlash": "#e3f0ca"
+          }
+        },
+        {
+          "name": "panel/header",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "aqua": "Header Statement",
+            "wire": "Header Statement",
+            "hackSlash": "Header Statement"
+          }
+        },
+        {
+          "name": "panel/radius",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 8,
+            "wire": 0,
+            "hackSlash": 2
+          }
+        },
+        {
+          "name": "panel/stroke-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffffff",
+            "wire": "#888888",
+            "hackSlash": "#c6a145"
+          }
+        },
+        {
+          "name": "panel/stroke-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffca8a",
+            "wire": "#888888",
+            "hackSlash": "#bc8c1c"
+          }
+        },
+        {
+          "name": "panel/surface-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#fff1df",
+            "wire": "#dddddd",
+            "hackSlash": "#736a42"
+          }
+        },
+        {
+          "name": "panel/surface-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#fffbf5",
+            "wire": "#dddddd",
+            "hackSlash": "#473a2b"
+          }
+        },
+        {
+          "name": "primary-btn-backer-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffca8a",
+            "wire": "#f5f5f5",
+            "hackSlash": "#fff68e"
+          }
+        },
+        {
+          "name": "primary-btn-backer-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffaacc",
+            "wire": "#cfcfcf",
+            "hackSlash": "#c67000"
+          }
+        },
+        {
+          "name": "primary-btn-backerStroke-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffaacc",
+            "wire": "#d1d1d1",
+            "hackSlash": "#d1d1d1"
+          }
+        },
+        {
+          "name": "primary-btn-backerStroke-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffaacc",
+            "wire": "#ffffff",
+            "hackSlash": "#ffffff"
+          }
+        },
+        {
+          "name": "primary-btn-label-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#fff9ea",
+            "wire": "#ffffff",
+            "hackSlash": "#eecc69"
+          }
+        },
+        {
+          "name": "primary-btn-label-size",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 22,
+            "wire": 22,
+            "hackSlash": 22
+          }
+        },
+        {
+          "name": "primary-btn-overaly-color3",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#058d81",
+            "wire": "#8c8c8c",
+            "hackSlash": "#730d00"
+          }
+        },
+        {
+          "name": "primary-btn-overlay-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#44d9cc",
+            "wire": "#8c8c8c",
+            "hackSlash": "#991510"
+          }
+        },
+        {
+          "name": "primary-btn-overlay-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#165d57",
+            "wire": "#8c8c8c",
+            "hackSlash": "#a82014"
+          }
+        },
+        {
+          "name": "primary-btn-overlayStroke-angle",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": -10,
+            "wire": 0,
+            "hackSlash": -12
+          }
+        },
+        {
+          "name": "primary-btn-overlayStroke-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#cbf3f0",
+            "wire": "#434343",
+            "hackSlash": "#e85d33"
+          }
+        },
+        {
+          "name": "primary-btn-overlayStroke-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#004b10",
+            "wire": "#434343",
+            "hackSlash": "#4c0d01"
+          }
+        },
+        {
+          "name": "primary-btn-radius",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 8,
+            "wire": 2,
+            "hackSlash": 1
+          }
+        },
+        {
+          "name": "primary-btn-ssurfaceStrike-angle",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 0,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "primary-btn-surface-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#15877d",
+            "wire": "#c7c7c7",
+            "hackSlash": "#8e5500"
+          }
+        },
+        {
+          "name": "primary-btn-surface-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#09403b",
+            "wire": "#c7c7c7",
+            "hackSlash": "#e8c142"
+          }
+        },
+        {
+          "name": "primary-btn-surfaceStroke-color1",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffaacc",
+            "wire": "#ffffff",
+            "hackSlash": "#946300"
+          }
+        },
+        {
+          "name": "primary-btn-surfaceStroke-color2",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#ffaacc",
+            "wire": "#ffffff",
+            "hackSlash": "#ffff00"
+          }
+        },
+        {
+          "name": "shadow/blur",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 2,
+            "wire": 2,
+            "hackSlash": 2
+          }
+        },
+        {
+          "name": "shadow/color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "aqua": "#29252566",
+            "wire": "#47474766",
+            "hackSlash": "#2d332f66"
+          }
+        },
+        {
+          "name": "shadow/spread",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 0,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "shadow/x",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 0,
+            "wire": 0,
+            "hackSlash": 0
+          }
+        },
+        {
+          "name": "shadow/y",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 2,
+            "wire": 2,
+            "hackSlash": 2
+          }
+        },
+        {
+          "name": "showBG",
+          "resolvedType": "BOOLEAN",
+          "valuesByMode": {
+            "aqua": false,
+            "wire": false,
+            "hackSlash": true
+          }
+        },
+        {
+          "name": "spacing/lg",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 20,
+            "wire": 20,
+            "hackSlash": 20
+          }
+        },
+        {
+          "name": "spacing/med",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 15,
+            "wire": 15,
+            "hackSlash": 15
+          }
+        },
+        {
+          "name": "spacing/sm",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 10,
+            "wire": 10,
+            "hackSlash": 10
+          }
+        },
+        {
+          "name": "spacing/xl",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 30,
+            "wire": 30,
+            "hackSlash": 30
+          }
+        },
+        {
+          "name": "spacing/xs",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 5,
+            "wire": 5,
+            "hackSlash": 5
+          }
+        },
+        {
+          "name": "stroke/l",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 4,
+            "wire": 4,
+            "hackSlash": 4
+          }
+        },
+        {
+          "name": "stroke/m",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 3,
+            "wire": 3,
+            "hackSlash": 3
+          }
+        },
+        {
+          "name": "stroke/s",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 2,
+            "wire": 2,
+            "hackSlash": 2
+          }
+        },
+        {
+          "name": "stroke/xl",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 5,
+            "wire": 5,
+            "hackSlash": 5
+          }
+        },
+        {
+          "name": "stroke/xs",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "aqua": 1,
+            "wire": 1,
+            "hackSlash": 2
+          }
+        },
+        {
+          "name": "wallpaper",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "aqua": "dots",
+            "wire": "foo",
+            "hackSlash": "grit"
+          }
+        }
+      ]
+    }
+  ]
+}

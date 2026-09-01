@@ -1,0 +1,132 @@
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 1080px;
+  max-width: 100%;
+  padding: var(--spacing-xl);
+  border: none;
+  outline: var(--stroke-xl) solid var(--panel-stroke-color1);
+  outline-offset: 0;
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-elevation-shadow);
+  overflow: clip;
+  isolation: isolate;
+  /* Opaque base — prevents page background bleeding through during gradient crossfade. */
+  background: var(--panel-surface-color1);
+}
+
+/* Figma a11y-closed (942:1138): 1080×320, padding 30, single `content` child. */
+.panel:not(.panelExpanded) {
+  height: 320px;
+  min-height: 320px;
+  max-height: 320px;
+}
+
+.panelExpanded {
+  min-height: 320px;
+}
+
+.surfaceClosed,
+.surfaceExpanded {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.surfaceClosed {
+  z-index: 0;
+  background-image: linear-gradient(
+    var(--panel-surface-gradient-angle-closed),
+    var(--panel-surface-color1) var(--panel-surface-gradient-stop-a),
+    var(--panel-surface-color2) var(--panel-surface-gradient-stop-b)
+  );
+}
+
+.surfaceExpanded {
+  z-index: 1;
+  background-image: linear-gradient(
+    var(--panel-surface-gradient-angle-expanded),
+    var(--panel-surface-color1) var(--panel-surface-gradient-stop-a),
+    var(--panel-surface-color2) var(--panel-surface-gradient-stop-b)
+  );
+  opacity: 0;
+  transition: opacity var(--anim-expand) var(--anim-ease-out);
+}
+
+.panelExpanded .surfaceExpanded {
+  opacity: 1;
+}
+
+.foreground {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Figma a11y-closed: only `content` is visible — no itemSpacing below hero. */
+.panelExpanded .foreground {
+  gap: var(--spacing-lg);
+}
+
+.bodyGrid {
+  display: grid;
+  grid-template-rows: 0fr;
+  min-height: 0;
+  overflow: hidden;
+  transition: grid-template-rows var(--anim-expand) var(--anim-ease-out);
+}
+
+.bodyGridExpanded {
+  grid-template-rows: 1fr;
+}
+
+.bodyInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: stretch;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.spacer {
+  width: var(--layout-spacer-width);
+  height: var(--layout-spacer-height);
+  flex-shrink: 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.expand-button {
+  position: relative;
+  width: 100%;
+  height: 49.521px;
+  flex-shrink: 0;
+}
+
+.back-to-top-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 49.521px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surfaceExpanded {
+    transition: none;
+  }
+
+  .bodyGrid {
+    transition: none;
+  }
+}

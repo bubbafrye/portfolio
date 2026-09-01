@@ -1,0 +1,139 @@
+.panel {
+  width: 100%;
+  background: var(--panel-base);
+  opacity: 1;
+  transition: opacity var(--anim-module-load-fade) var(--anim-ease-out);
+}
+
+.panelLoadHidden {
+  opacity: 0;
+}
+
+.panelFadingOut {
+  opacity: 0;
+  transition: opacity var(--anim-module-unload-fade) var(--anim-ease-out);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.bodyGrid {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  transition: grid-template-rows var(--anim-expand) var(--anim-ease-out);
+}
+
+.bodyGridExpanded {
+  grid-template-rows: 1fr;
+}
+
+.bodyInner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.overview {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding-block: 20px;
+  box-sizing: border-box;
+}
+
+.heroWrap {
+  flex-shrink: 0;
+  width: 390px;
+  height: 202px;
+  border: 1px solid var(--panel-stroke);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.heroWrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overviewContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  min-width: 0;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+.overviewHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.overviewText {
+  flex: 1;
+  min-width: 0;
+}
+
+.overviewTitle {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: var(--font-color);
+}
+
+.metaList {
+  margin: 0;
+  padding-left: 1.5em;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--font-color);
+  list-style: disc;
+}
+
+.metaLabel {
+  font-weight: 700;
+}
+
+.metaValue {
+  font-weight: 400;
+}
+
+.btnRow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    transition: none;
+  }
+
+  .bodyGrid {
+    transition: none;
+  }
+}

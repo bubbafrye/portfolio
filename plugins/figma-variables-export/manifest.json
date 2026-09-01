@@ -1,0 +1,11 @@
+{
+  "name": "Portfolio Variables Export",
+  "id": "portfolio-variables-export",
+  "api": "1.0.0",
+  "icon": "icon.png",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "enablePrivatePluginApi": true
+}

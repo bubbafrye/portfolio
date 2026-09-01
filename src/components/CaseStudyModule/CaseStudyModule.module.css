@@ -1,0 +1,68 @@
+/* Full-bleed background; content footprint stays in .inner */
+.module {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--panel-base);
+  opacity: 1;
+  transition: opacity var(--anim-module-load-fade) var(--anim-ease-out);
+}
+
+.moduleLoadHidden {
+  opacity: 0;
+}
+
+.moduleFadingOut {
+  opacity: 0;
+  transition: opacity var(--anim-module-unload-fade) var(--anim-ease-out);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.bodyGrid {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  transition: grid-template-rows var(--anim-expand) var(--anim-ease-out);
+}
+
+.bodyGridExpanded {
+  grid-template-rows: 1fr;
+}
+
+.bodyGridOnly {
+  grid-template-rows: 1fr;
+}
+
+.bodyGridOnly:not(.bodyGridExpanded) {
+  grid-template-rows: 0fr;
+}
+
+.bodyInner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module {
+    transition: none;
+  }
+
+  .bodyGrid {
+    transition: none;
+  }
+}

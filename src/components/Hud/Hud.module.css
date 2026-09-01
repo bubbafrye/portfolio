@@ -1,0 +1,83 @@
+.hud {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  height: 55px;
+  background: var(--page-surface-color1);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+  padding: 0 10px;
+  background: var(--page-surface-color1);
+}
+
+.texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.l {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--font-primary);
+  font-size: var(--font-h3);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--font-color);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.mid {
+  flex: 1 1 0;
+  min-width: 1px;
+  height: 36px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 0 15px;
+  flex-shrink: 0;
+}
+
+.file-alt,
+.envelope,
+.linkedin-in {
+  display: block;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.file-alt img,
+.envelope img,
+.linkedin-in img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,22 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  background: var(--panel-base);
+  box-sizing: border-box;
+}
+
+.section {
+  width: 100%;
+}
+
+.expandedPanel {
+  width: 100%;
+}
+
+.anchor {
+  scroll-margin-top: 0;
+}

@@ -1,0 +1,11 @@
+/**
+ * Self-hosted fonts only — everything else loads from Google Fonts (see index.html).
+ * Add: public/fonts/diablo.woff / diablo.woff2
+ */
+@font-face {
+  font-family: "DIABLO";
+  src: url("/fonts/diablo.woff2") format("woff2"), url("/fonts/diablo.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

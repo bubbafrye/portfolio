@@ -1,0 +1,9 @@
+.link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.link:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,48 @@
+.ribbon {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 66px;
+  width: 100%;
+  padding: 4px 40px;
+  background: #ffde96;
+  color: #000;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 49px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 38px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .ribbon {
+    gap: 20px;
+    padding: 16px 20px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}

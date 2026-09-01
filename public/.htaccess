@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Missing static files should 404 — not fall through to index.html (causes MIME errors).
+  RewriteCond %{REQUEST_URI} !\.(?:css|js|mjs|ico|png|jpe?g|gif|webp|svg|woff2?|ttf|otf|json|map)$ [NC]
+  RewriteRule . index.html [L]
+</IfModule>

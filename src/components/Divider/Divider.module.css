@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background: var(--font-color, #044a87);
+}

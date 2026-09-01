@@ -1,0 +1,36 @@
+.slot {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.reveal {
+  width: 100%;
+}
+
+.pending {
+  opacity: 0;
+  transform: translateX(var(--anim-slide-distance));
+  transition: none;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity var(--anim-fade-in) var(--anim-ease-out),
+    transform var(--anim-slide-in) var(--anim-ease-out);
+}
+
+.exiting {
+  opacity: 0;
+  transform: translateX(var(--anim-slide-distance));
+  transition:
+    opacity var(--anim-fade-in) var(--anim-ease-out),
+    transform var(--anim-slide-in) var(--anim-ease-out);
+}
+
+.reducedMotion {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}

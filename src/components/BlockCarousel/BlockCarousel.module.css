@@ -1,0 +1,228 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 1220px;
+  border-left: 4px solid var(--accent-border, var(--panel-accent-dark));
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text {
+  flex: 0 0 600px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-inline: 20px;
+  color: var(--case-study-text, #085273);
+}
+
+.heading {
+  margin: 0;
+  min-height: 30px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: normal;
+}
+
+.body {
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  white-space: pre-wrap;
+}
+
+.body p {
+  margin: 0;
+}
+
+.carousel {
+  flex: 0 0 620px;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding-inline: 10px;
+  box-sizing: border-box;
+}
+
+.swapMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 481px;
+  margin: 0;
+}
+
+.feature {
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+  height: 452px;
+  overflow: hidden;
+}
+
+.feature img,
+.placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature img {
+  position: absolute;
+  inset: 0;
+  transition: opacity var(--anim-expand) var(--anim-ease-out);
+}
+
+.featureVisible {
+  opacity: 1;
+  z-index: 1;
+}
+
+.featureHidden {
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.placeholder {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.caption {
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--font-sm, 16px);
+  line-height: normal;
+  text-align: center;
+  color: var(--font-color, #044a87);
+}
+
+.thumbs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  min-height: 108px;
+}
+
+.thumb {
+  position: relative;
+  flex: 0 0 140px;
+  width: 140px;
+  height: 105px;
+  padding: 0;
+  border: 5px solid transparent;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition:
+    border-color var(--anim-expand) var(--anim-ease-out),
+    box-shadow var(--anim-expand) var(--anim-ease-out);
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+  transition: background-color var(--anim-expand) var(--anim-ease-out);
+}
+
+/* hover — previously selected chrome, while not selected */
+.thumb:hover:not(.thumbSelected) {
+  border-color: var(--panel-accent-light);
+  box-shadow: 0 3px 0 var(--panel-accent-dark);
+}
+
+.thumb:hover:not(.thumbSelected)::after {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+/* pressed — slightly stronger wash while not selected */
+.thumb:active:not(.thumbSelected) {
+  border-color: var(--panel-accent-light);
+  box-shadow: 0 1px 0 var(--panel-accent-dark);
+}
+
+.thumb:active:not(.thumbSelected)::after {
+  background: rgba(128, 128, 128, 0.6);
+}
+
+/* selected — previously hover chrome */
+.thumbSelected {
+  border-color: color-mix(in srgb, var(--panel-accent-dark) 45%, transparent);
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--panel-accent-dark) 55%, transparent);
+}
+
+.thumbSelected::after {
+  background: transparent;
+}
+
+.thumb:focus-visible {
+  outline: 2px solid var(--font-color, #044a87);
+  outline-offset: 2px;
+}
+
+.thumb img,
+.thumbPlaceholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.thumbPlaceholder {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 1240px) {
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .text,
+  .carousel {
+    flex: 1 1 auto;
+    max-width: none;
+    width: 100%;
+  }
+
+  .feature {
+    width: 100%;
+  }
+
+  .thumbs {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature img,
+  .thumb,
+  .thumb::after {
+    transition: none;
+  }
+}

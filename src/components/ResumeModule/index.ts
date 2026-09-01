@@ -1,0 +1,1 @@
+export { ResumeModule } from "./ResumeModule";

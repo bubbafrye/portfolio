@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "fileName": "portfolio",
+  "collections": [
+    {
+      "id": "VariableCollectionId:1387:1036",
+      "name": "system",
+      "modes": [
+        {
+          "id": "1387:0",
+          "name": "Mode 1"
+        }
+      ],
+      "variables": [
+        {
+          "name": "primary-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "Mode 1": "#044a87"
+          }
+        },
+        {
+          "name": "primary-color-fade",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "Mode 1": "#044a8733"
+          }
+        }
+      ]
+    },
+    {
+      "id": "VariableCollectionId:1640:2015",
+      "name": "2026",
+      "modes": [
+        {
+          "id": "3004:0",
+          "name": "root"
+        },
+        {
+          "id": "1640:0",
+          "name": "a11y"
+        },
+        {
+          "id": "1639:0",
+          "name": "park"
+        },
+        {
+          "id": "1639:1",
+          "name": "blast"
+        },
+        {
+          "id": "1641:2",
+          "name": "tools"
+        },
+        {
+          "id": "1641:3",
+          "name": "teams"
+        },
+        {
+          "id": "3095:0",
+          "name": "tl-dr"
+        },
+        {
+          "id": "3119:3",
+          "name": "cs-drag-drop"
+        },
+        {
+          "id": "3119:4",
+          "name": "cs--2"
+        },
+        {
+          "id": "3119:5",
+          "name": "cs--3"
+        }
+      ],
+      "variables": [
+        {
+          "name": "anim/ease-out",
+          "resolvedType": "EASING",
+          "valuesByMode": {
+            "root": "[object Object]",
+            "a11y": "[object Object]",
+            "park": "[object Object]",
+            "blast": "[object Object]",
+            "tools": "[object Object]",
+            "teams": "[object Object]",
+            "tl-dr": "[object Object]",
+            "cs-drag-drop": "[object Object]",
+            "cs--2": "[object Object]",
+            "cs--3": "[object Object]"
+          }
+        },
+        {
+          "name": "anim/expand",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 350,
+            "a11y": 350,
+            "park": 350,
+            "blast": 350,
+            "tools": 350,
+            "teams": 350,
+            "tl-dr": 350,
+            "cs-drag-drop": 350,
+            "cs--2": 350,
+            "cs--3": 350
+          }
+        },
+        {
+          "name": "anim/fade-in",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 800,
+            "a11y": 800,
+            "park": 800,
+            "blast": 800,
+            "tools": 800,
+            "teams": 800,
+            "tl-dr": 800,
+            "cs-drag-drop": 800,
+            "cs--2": 800,
+            "cs--3": 800
+          }
+        },
+        {
+          "name": "anim/module-load-fade",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 500,
+            "a11y": 500,
+            "park": 500,
+            "blast": 500,
+            "tools": 500,
+            "teams": 500,
+            "tl-dr": 500,
+            "cs-drag-drop": 500,
+            "cs--2": 500,
+            "cs--3": 500
+          }
+        },
+        {
+          "name": "anim/module-unload-fade",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 350,
+            "a11y": 350,
+            "park": 350,
+            "blast": 350,
+            "tools": 350,
+            "teams": 350,
+            "tl-dr": 350,
+            "cs-drag-drop": 350,
+            "cs--2": 350,
+            "cs--3": 350
+          }
+        },
+        {
+          "name": "anim/slide-distance",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 50,
+            "a11y": 50,
+            "park": 50,
+            "blast": 50,
+            "tools": 50,
+            "teams": 50,
+            "tl-dr": 50,
+            "cs-drag-drop": 50,
+            "cs--2": 50,
+            "cs--3": 50
+          }
+        },
+        {
+          "name": "anim/slide-in",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 500,
+            "a11y": 500,
+            "park": 500,
+            "blast": 500,
+            "tools": 500,
+            "teams": 500,
+            "tl-dr": 500,
+            "cs-drag-drop": 500,
+            "cs--2": 500,
+            "cs--3": 500
+          }
+        },
+        {
+          "name": "anim/timing-stagger",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 100,
+            "a11y": 100,
+            "park": 100,
+            "blast": 100,
+            "tools": 100,
+            "teams": 100,
+            "tl-dr": 100,
+            "cs-drag-drop": 100,
+            "cs--2": 100,
+            "cs--3": 100
+          }
+        },
+        {
+          "name": "button/primary-base-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#044a87",
+            "a11y": "#044a87",
+            "park": "#044a87",
+            "blast": "#044a87",
+            "tools": "#044a87",
+            "teams": "#044a87",
+            "tl-dr": "#460000",
+            "cs-drag-drop": "#044a87",
+            "cs--2": "#044a87",
+            "cs--3": "#044a87"
+          }
+        },
+        {
+          "name": "button/primary-font-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#ffffffcc",
+            "a11y": "#ffffffcc",
+            "park": "#ffffffcc",
+            "blast": "#ffffffcc",
+            "tools": "#ffffffcc",
+            "teams": "#ffffffcc",
+            "tl-dr": "#ffffffcc",
+            "cs-drag-drop": "#ffffffcc",
+            "cs--2": "#ffffffcc",
+            "cs--3": "#ffffffcc"
+          }
+        },
+        {
+          "name": "button/primary-hover-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#4083bd",
+            "a11y": "#4083bd",
+            "park": "#4083bd",
+            "blast": "#4083bd",
+            "tools": "#4083bd",
+            "teams": "#4083bd",
+            "tl-dr": "#d59999",
+            "cs-drag-drop": "#4083bd",
+            "cs--2": "#4083bd",
+            "cs--3": "#4083bd"
+          }
+        },
+        {
+          "name": "button/radius",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 5,
+            "a11y": 5,
+            "park": 5,
+            "blast": 5,
+            "tools": 5,
+            "teams": 5,
+            "tl-dr": 5,
+            "cs-drag-drop": 5,
+            "cs--2": 5,
+            "cs--3": 5
+          }
+        },
+        {
+          "name": "button/secondary-base-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#ffffffcc",
+            "a11y": "#ffffffcc",
+            "park": "#ffffffcc",
+            "blast": "#ffffffcc",
+            "tools": "#ffffffcc",
+            "teams": "#ffffffcc",
+            "tl-dr": "#ffffffcc",
+            "cs-drag-drop": "#ffffffcc",
+            "cs--2": "#ffffffcc",
+            "cs--3": "#ffffffcc"
+          }
+        },
+        {
+          "name": "button/secondary-font-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#044a87",
+            "a11y": "#044a87",
+            "park": "#044a87",
+            "blast": "#044a87",
+            "tools": "#044a87",
+            "teams": "#044a87",
+            "tl-dr": "#460000",
+            "cs-drag-drop": "#044a87",
+            "cs--2": "#044a87",
+            "cs--3": "#044a87"
+          }
+        },
+        {
+          "name": "button/secondary-hover-color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#ffffffe5",
+            "a11y": "#ffffffe5",
+            "park": "#ffffffe5",
+            "blast": "#ffffffe5",
+            "tools": "#ffffffe5",
+            "teams": "#ffffffe5",
+            "tl-dr": "#ffffffe5",
+            "cs-drag-drop": "#ffffffe5",
+            "cs--2": "#ffffffe5",
+            "cs--3": "#ffffffe5"
+          }
+        },
+        {
+          "name": "font/color",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#044a87",
+            "a11y": "#044a87",
+            "park": "#044a87",
+            "blast": "#044a87",
+            "tools": "#044a87",
+            "teams": "#044a87",
+            "tl-dr": "#044a87",
+            "cs-drag-drop": "#044a87",
+            "cs--2": "#044a87",
+            "cs--3": "#044a87"
+          }
+        },
+        {
+          "name": "font/color-alt",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#ffffff",
+            "a11y": "#ffffff",
+            "park": "#ffffff",
+            "blast": "#ffffff",
+            "tools": "#ffffff",
+            "teams": "#ffffff",
+            "tl-dr": "#ffffff",
+            "cs-drag-drop": "#ffffff",
+            "cs--2": "#ffffff",
+            "cs--3": "#ffffff"
+          }
+        },
+        {
+          "name": "font/h1",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 38,
+            "a11y": 38,
+            "park": 38,
+            "blast": 38,
+            "tools": 38,
+            "teams": 38,
+            "tl-dr": 38,
+            "cs-drag-drop": 38,
+            "cs--2": 38,
+            "cs--3": 38
+          }
+        },
+        {
+          "name": "font/h2",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 32,
+            "a11y": 32,
+            "park": 32,
+            "blast": 32,
+            "tools": 32,
+            "teams": 32,
+            "tl-dr": 32,
+            "cs-drag-drop": 32,
+            "cs--2": 32,
+            "cs--3": 32
+          }
+        },
+        {
+          "name": "font/h3",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 26,
+            "a11y": 26,
+            "park": 26,
+            "blast": 26,
+            "tools": 26,
+            "teams": 26,
+            "tl-dr": 26,
+            "cs-drag-drop": 26,
+            "cs--2": 26,
+            "cs--3": 26
+          }
+        },
+        {
+          "name": "font/lg",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 22,
+            "a11y": 22,
+            "park": 22,
+            "blast": 22,
+            "tools": 22,
+            "teams": 22,
+            "tl-dr": 22,
+            "cs-drag-drop": 22,
+            "cs--2": 22,
+            "cs--3": 22
+          }
+        },
+        {
+          "name": "font/line-spacing",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 38,
+            "a11y": 38,
+            "park": 38,
+            "blast": 38,
+            "tools": 38,
+            "teams": 38,
+            "tl-dr": 38,
+            "cs-drag-drop": 38,
+            "cs--2": 38,
+            "cs--3": 38
+          }
+        },
+        {
+          "name": "font/med",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 18,
+            "a11y": 18,
+            "park": 18,
+            "blast": 18,
+            "tools": 18,
+            "teams": 18,
+            "tl-dr": 18,
+            "cs-drag-drop": 18,
+            "cs--2": 18,
+            "cs--3": 18
+          }
+        },
+        {
+          "name": "font/primary",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "root": "Mukta",
+            "a11y": "Mukta",
+            "park": "Mukta",
+            "blast": "Mukta",
+            "tools": "Mukta",
+            "teams": "Mukta",
+            "tl-dr": "Mukta",
+            "cs-drag-drop": "Mukta",
+            "cs--2": "Mukta",
+            "cs--3": "Mukta"
+          }
+        },
+        {
+          "name": "font/primary-size",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 36,
+            "a11y": 36,
+            "park": 36,
+            "blast": 36,
+            "tools": 36,
+            "teams": 36,
+            "tl-dr": 36,
+            "cs-drag-drop": 36,
+            "cs--2": 36,
+            "cs--3": 36
+          }
+        },
+        {
+          "name": "font/secondary",
+          "resolvedType": "STRING",
+          "valuesByMode": {
+            "root": "Niramit",
+            "a11y": "Niramit",
+            "park": "Niramit",
+            "blast": "Niramit",
+            "tools": "Niramit",
+            "teams": "Niramit",
+            "tl-dr": "Niramit",
+            "cs-drag-drop": "Niramit",
+            "cs--2": "Niramit",
+            "cs--3": "Niramit"
+          }
+        },
+        {
+          "name": "font/secondary-size",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 0,
+            "a11y": 0,
+            "park": 0,
+            "blast": 0,
+            "tools": 0,
+            "teams": 0,
+            "tl-dr": 0,
+            "cs-drag-drop": 0,
+            "cs--2": 0,
+            "cs--3": 0
+          }
+        },
+        {
+          "name": "font/sm",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 16,
+            "a11y": 16,
+            "park": 16,
+            "blast": 16,
+            "tools": 16,
+            "teams": 16,
+            "tl-dr": 16,
+            "cs-drag-drop": 16,
+            "cs--2": 16,
+            "cs--3": 16
+          }
+        },
+        {
+          "name": "font/xsm",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 10,
+            "a11y": 10,
+            "park": 10,
+            "blast": 10,
+            "tools": 10,
+            "teams": 10,
+            "tl-dr": 10,
+            "cs-drag-drop": 10,
+            "cs--2": 10,
+            "cs--3": 10
+          }
+        },
+        {
+          "name": "panel/accent-dark",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#b7d5e7",
+            "a11y": "#e8d08f",
+            "park": "#92dba4",
+            "blast": "#a1b3e2",
+            "tools": "#a1cbe2",
+            "teams": "#f3b2c1",
+            "tl-dr": "#eca9a9",
+            "cs-drag-drop": "#c3f0f2",
+            "cs--2": "#eca9a9",
+            "cs--3": "#eca9a9"
+          }
+        },
+        {
+          "name": "panel/accent-light",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#ffffff",
+            "a11y": "#fff9e7",
+            "park": "#e4f8e9",
+            "blast": "#e4eaf8",
+            "tools": "#e4eff8",
+            "teams": "#fff0fa",
+            "tl-dr": "#f7e2e2",
+            "cs-drag-drop": "#ffffff99",
+            "cs--2": "#f7e2e2",
+            "cs--3": "#f7e2e2"
+          }
+        },
+        {
+          "name": "panel/base",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#e4f8ff",
+            "a11y": "#fff2ce",
+            "park": "#c9f0d3",
+            "blast": "#c9d4f0",
+            "tools": "#bfe5ff",
+            "teams": "#ffe1f4",
+            "tl-dr": "#f6d7d7",
+            "cs-drag-drop": "#eaffff",
+            "cs--2": "#f6d7d7",
+            "cs--3": "#f6d7d7"
+          }
+        },
+        {
+          "name": "panel/radius",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 8,
+            "a11y": 8,
+            "park": 8,
+            "blast": 8,
+            "tools": 8,
+            "teams": 8,
+            "tl-dr": 8,
+            "cs-drag-drop": 8,
+            "cs--2": 8,
+            "cs--3": 8
+          }
+        },
+        {
+          "name": "panel/selected",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#388055",
+            "a11y": "#614804",
+            "park": "#024f15",
+            "blast": "#00133f",
+            "tools": "#002c3f",
+            "teams": "#46002d",
+            "tl-dr": "#460000",
+            "cs-drag-drop": "#086a73",
+            "cs--2": "#460000",
+            "cs--3": "#460000"
+          }
+        },
+        {
+          "name": "panel/stroke",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "root": "#8cb7d1",
+            "a11y": "#d1bb81",
+            "park": "#83c594",
+            "blast": "#91a1cb",
+            "tools": "#91b2cb",
+            "teams": "#dba0ae",
+            "tl-dr": "#d59999",
+            "cs-drag-drop": "#abe0da",
+            "cs--2": "#d59999",
+            "cs--3": "#d59999"
+          }
+        },
+        {
+          "name": "spacing/lg",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 20,
+            "a11y": 20,
+            "park": 20,
+            "blast": 20,
+            "tools": 20,
+            "teams": 20,
+            "tl-dr": 20,
+            "cs-drag-drop": 20,
+            "cs--2": 20,
+            "cs--3": 20
+          }
+        },
+        {
+          "name": "spacing/med",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 15,
+            "a11y": 15,
+            "park": 15,
+            "blast": 15,
+            "tools": 15,
+            "teams": 15,
+            "tl-dr": 15,
+            "cs-drag-drop": 15,
+            "cs--2": 15,
+            "cs--3": 15
+          }
+        },
+        {
+          "name": "spacing/sm",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 10,
+            "a11y": 10,
+            "park": 10,
+            "blast": 10,
+            "tools": 10,
+            "teams": 10,
+            "tl-dr": 10,
+            "cs-drag-drop": 10,
+            "cs--2": 10,
+            "cs--3": 10
+          }
+        },
+        {
+          "name": "spacing/xl",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 30,
+            "a11y": 30,
+            "park": 30,
+            "blast": 30,
+            "tools": 30,
+            "teams": 30,
+            "tl-dr": 30,
+            "cs-drag-drop": 30,
+            "cs--2": 30,
+            "cs--3": 30
+          }
+        },
+        {
+          "name": "spacing/xs",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 5,
+            "a11y": 5,
+            "park": 5,
+            "blast": 5,
+            "tools": 5,
+            "teams": 5,
+            "tl-dr": 5,
+            "cs-drag-drop": 5,
+            "cs--2": 5,
+            "cs--3": 5
+          }
+        },
+        {
+          "name": "spacing/xxl",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 45,
+            "a11y": 45,
+            "park": 45,
+            "blast": 45,
+            "tools": 45,
+            "teams": 45,
+            "tl-dr": 45,
+            "cs-drag-drop": 45,
+            "cs--2": 45,
+            "cs--3": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": "VariableCollectionId:3119:3099",
+      "name": "case-studies",
+      "modes": [
+        {
+          "id": "3119:1",
+          "name": "cs-dragDrop"
+        },
+        {
+          "id": "3119:2",
+          "name": "cs--"
+        }
+      ],
+      "variables": [
+        {
+          "name": "panel/accent-dark",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "cs-dragDrop": "#cbe2f0",
+            "cs--": "#d8f0cb"
+          }
+        },
+        {
+          "name": "panel/accent-light",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "cs-dragDrop": "#ffffff",
+            "cs--": "#ffffff"
+          }
+        },
+        {
+          "name": "panel/base",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "cs-dragDrop": "#f4fcff",
+            "cs--": "#f4fff5"
+          }
+        },
+        {
+          "name": "panel/radius",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "cs-dragDrop": 8,
+            "cs--": 8
+          }
+        },
+        {
+          "name": "panel/selected",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "cs-dragDrop": "#7d98a1",
+            "cs--": "#8da17d"
+          }
+        },
+        {
+          "name": "panel/stroke",
+          "resolvedType": "COLOR",
+          "valuesByMode": {
+            "cs-dragDrop": "#b1cfe1",
+            "cs--": "#c3e1b1"
+          }
+        }
+      ]
+    }
+  ],
+  "figmaFileKey": "zk1DYJAlidXfG6czoxFdLF"
+}

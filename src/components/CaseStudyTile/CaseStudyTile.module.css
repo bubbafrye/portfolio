@@ -1,0 +1,431 @@
+.tile {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  color: var(--font-color);
+  background: var(--panel-base);
+  overflow: hidden;
+}
+
+.tileProject {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 750px;
+}
+
+.tileProject .layerUp {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.tileProject .layerHover {
+  align-self: stretch;
+}
+
+.tileHorizontal {
+  display: flex;
+  flex-direction: column;
+  min-height: 314px;
+}
+
+.tileHorizontal .layerUp {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 314px;
+}
+
+.tileHorizontal .layerHover {
+  display: flex;
+  flex-direction: column;
+}
+
+.layerUp {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--anim-module-load-fade) var(--anim-ease-out),
+    visibility 0ms linear 0ms;
+}
+
+.layerHover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  background: var(--panel-selected);
+  color: #fff;
+  overflow: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--anim-module-unload-fade) var(--anim-ease-out),
+    visibility 0ms linear var(--anim-module-unload-fade);
+}
+
+.tile:hover .layerUp,
+.tile:focus-visible .layerUp,
+.tile[data-selected] .layerUp {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--anim-module-unload-fade) var(--anim-ease-out),
+    visibility 0ms linear 0ms;
+}
+
+.tile:hover .layerHover,
+.tile:focus-visible .layerHover,
+.tile[data-selected] .layerHover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity var(--anim-module-load-fade) var(--anim-ease-out),
+    visibility 0ms linear 0ms;
+}
+
+.layerInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  padding: 30px 30px 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tileProject .layerInner {
+  flex: 1;
+  gap: 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.projectMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-block: 20px;
+  box-sizing: border-box;
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-block: 10px;
+  box-sizing: border-box;
+}
+
+/* Figma static / hover — w-full, gap 24px, items-center (no inner px) */
+.projectStatic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.layerHover .tileProject .title {
+  height: auto;
+}
+
+.tileHorizontal .layerInner {
+  flex: 1;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 30px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tileHorizontal[data-figma-name="tools"] .layerInner {
+  padding-block: 40px 20px;
+}
+
+.horizontalMain {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  padding-block: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  width: 100%;
+  max-width: 344px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  text-align: center;
+}
+
+.tileProject .title {
+  height: calc(40px * 1.1 * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tileHorizontal .title {
+  max-width: none;
+  text-align: left;
+}
+
+.titleLine {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  width: 335px;
+  height: 338px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.heroSmall {
+  width: 200px;
+  height: 202px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.heroStack {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.heroFlipWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.heroFlip {
+  flex: none;
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.heroRounded {
+  border-radius: 20px;
+}
+
+.heroRounded .heroLayer {
+  border-radius: 20px;
+}
+
+.heroSmall.heroRounded {
+  border-radius: 30px;
+}
+
+.heroSmall.heroRounded .heroLayer {
+  border-radius: 30px;
+}
+
+.heroSmall.heroBorder {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+}
+
+.heroBorder {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+
+.project {
+  margin: 0;
+  width: 345px;
+  max-width: 100%;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.11px;
+  text-align: center;
+  font-synthesis: none;
+}
+
+.blockLabel {
+  font-weight: 700;
+}
+
+.blockValue {
+  font-weight: 400;
+}
+
+.results {
+  width: 345px;
+  max-width: 100%;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.11px;
+  text-align: left;
+  font-synthesis: none;
+}
+
+.resultsLead {
+  margin: 0 0 0.25em;
+}
+
+.resultsList {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+  font-weight: 400;
+}
+
+.resultsList li {
+  margin-left: 33px;
+  font-weight: 400;
+}
+
+.resultsList li + li {
+  margin-top: 0.25em;
+}
+
+.readMore {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 137px;
+  height: 43px;
+  border-radius: 5px;
+  background: var(--panel-base);
+  overflow: hidden;
+}
+
+.readMoreSquare {
+  width: 136px;
+}
+
+.readMoreFrosted {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.readMoreHighlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 137px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.readMoreFrosted .readMoreHighlight {
+  background: var(--panel-base);
+}
+
+.readMoreSquare .readMoreHighlight {
+  width: 136px;
+}
+
+.readMoreLabel {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--panel-selected);
+}
+
+.horizontalBody {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.horizontalAside {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 202px;
+}
+
+.intro {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 1.45;
+  letter-spacing: -0.11px;
+  white-space: pre-wrap;
+}
+
+.tileHorizontal[data-figma-name="team"] .layerHover .intro {
+  font-family: var(--font-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layerUp,
+  .layerHover {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .tileProject,
+  .tileHorizontal {
+    min-height: auto;
+  }
+
+  .hero {
+    width: min(335px, 100%);
+    height: auto;
+    aspect-ratio: 335 / 338;
+  }
+
+  .horizontalBody {
+    flex-direction: column;
+  }
+}

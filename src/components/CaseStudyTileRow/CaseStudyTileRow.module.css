@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+}

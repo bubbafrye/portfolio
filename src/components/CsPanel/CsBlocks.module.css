@@ -1,0 +1,259 @@
+.section {
+  width: 100%;
+  padding: var(--spacing-lg) 0;
+  border-radius: var(--panel-radius);
+  background: var(--panel-accent-light);
+  box-sizing: border-box;
+}
+
+.sectionInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-inline: var(--spacing-lg);
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: var(--font-h2);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--font-color);
+}
+
+.body {
+  font-family: var(--font-secondary);
+  font-size: var(--font-lg);
+  line-height: 30px;
+  color: var(--font-color);
+}
+
+.body p {
+  margin: 0 0 0.5em;
+}
+
+.body ul {
+  margin: 0;
+  padding-left: 33px;
+}
+
+.body li {
+  margin-bottom: 0.25em;
+}
+
+.body strong,
+.label {
+  font-weight: 700;
+}
+
+.quoteRow {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding-inline: var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+.quote {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+}
+
+.quoteBubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 15px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.quoteMark {
+  flex-shrink: 0;
+  width: 33px;
+  font-family: var(--font-primary);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 38px;
+  color: var(--font-color);
+}
+
+.quoteBody {
+  flex: 1;
+  min-width: 0;
+  padding-inline: 10px;
+}
+
+.quoteBody p {
+  margin: 0 0 10px;
+  font-family: var(--font-primary);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--font-color);
+}
+
+.quoteBody footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--font-color);
+}
+
+.quoteTail {
+  display: block;
+  width: min(301px, 100%);
+  height: 43px;
+}
+
+.processMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.processMedia img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.processMedia figcaption,
+.mediaCaption {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--font-sm);
+  line-height: 30px;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.solutionRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.solutionText {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--font-lg);
+  line-height: 30px;
+  color: var(--font-color);
+}
+
+.solutionText p {
+  margin: 0 0 0.75em;
+}
+
+.solutionImage {
+  flex-shrink: 0;
+  width: 480px;
+  max-width: 45%;
+  border-radius: var(--panel-radius);
+  overflow: hidden;
+}
+
+.solutionImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.researchRow {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.researchMedia {
+  flex-shrink: 0;
+  width: 521px;
+  max-width: 42%;
+}
+
+.researchMedia img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.processSplit {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  width: 100%;
+  padding-inline: var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+.processSplit ul {
+  flex: 1;
+  margin: 0;
+  padding-left: 33px;
+  font-family: var(--font-secondary);
+  font-size: var(--font-lg);
+  line-height: 30px;
+  color: var(--font-color);
+}
+
+.dualInset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-med);
+  width: 100%;
+  padding-block: 10px;
+}
+
+.insetCard {
+  min-height: 330px;
+  padding: var(--spacing-lg) var(--spacing-med);
+  border: 2px solid var(--panel-stroke);
+  border-radius: var(--panel-radius);
+  background: var(--panel-accent-dark);
+  box-sizing: border-box;
+}
+
+.insetCard h3 {
+  margin: 0 0 var(--spacing-med);
+  font-family: var(--font-primary);
+  font-size: var(--font-h2);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--font-color);
+}
+
+.insetCard p {
+  margin: 0;
+  min-height: 100px;
+  font-family: var(--font-secondary);
+  font-size: var(--font-lg);
+  line-height: 38px;
+  color: var(--font-color);
+}
+
+.nestedList {
+  padding-left: 33px;
+  list-style: disc;
+}
+
+.nestedList ul {
+  list-style: disc;
+}

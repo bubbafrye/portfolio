@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+design-tokens/*.zip
+design/psd/
+test-results/

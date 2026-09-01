@@ -1,0 +1,29 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--page-surface-color1) 0%,
+    var(--page-surface-color2) 100%
+  );
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 100%;
+  padding: var(--layout-page-panel-top) var(--layout-page-panel-left) 80px;
+}
+
+@media (max-width: 1280px) {
+  .content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

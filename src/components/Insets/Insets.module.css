@@ -1,0 +1,8 @@
+.insets {
+  display: flex;
+  gap: var(--spacing-med);
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+}

@@ -1,0 +1,259 @@
+/**
+ * Primary button — layout from Figma node 27:54.
+ * Tokens: design-tokens/tokens.css (set data-theme on an ancestor).
+ */
+
+.root {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.root:disabled {
+  cursor: not-allowed;
+}
+
+.backer {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--primary-btn-radius);
+  background: var(--primary-btn-backer-color1);
+  border-width: var(--number-null);
+  border-style: solid;
+  border-color: var(--color-null);
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+}
+
+.base {
+  position: absolute;
+  inset: 1.92% 0.66%;
+  border-radius: var(--primary-btn-radius);
+  border-width: var(--number-null);
+  border-style: solid;
+  border-color: var(--color-null);
+  background: linear-gradient(
+    180deg,
+    var(--primary-btn-surface-color1) 0%,
+    var(--primary-btn-surface-color2) 100%
+  );
+}
+
+.overlay {
+  position: absolute;
+  inset: 3.85% 1.32%;
+  border-radius: var(--primary-btn-radius);
+  /* Gradient stroke (Figma: GRADIENT_LINEAR on overlay) — not representable as border-color */
+  border: var(--stroke-xs) solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  --overlay-stroke-angle: var(--primary-btn-overlayStroke-angle);
+}
+
+/* Up */
+.overlay.overlayUp,
+.root[data-button-variant="interactive"]:not(:disabled):not(:hover):not(:active) .overlay,
+.root[data-button-variant="controlled"][data-visual-state="up"] .overlay.overlayUp {
+  background:
+    linear-gradient(
+      180deg,
+      var(--primary-btn-overlay-color1) 0%,
+      var(--primary-btn-overlay-color2) 90.385%,
+      var(--primary-btn-overaly-color3) 100%
+    )
+      padding-box,
+    linear-gradient(
+      var(--overlay-stroke-angle),
+      var(--primary-btn-overlayStroke-color1) 0%,
+      var(--primary-btn-overlayStroke-color2) 100%
+    )
+      border-box;
+}
+
+/* Hover */
+.overlay.overlayHover,
+.root[data-button-variant="interactive"]:not(:disabled):hover:not(:active) .overlay,
+.root[data-button-variant="controlled"][data-visual-state="hover"] .overlay.overlayHover {
+  background:
+    linear-gradient(
+      180deg,
+      var(--primary-btn-overlay-color1) 0%,
+      var(--primary-btn-overlay-color2) 48.077%,
+      var(--primary-btn-overlay-color1) 100%
+    )
+      padding-box,
+    linear-gradient(
+      var(--overlay-stroke-angle),
+      var(--primary-btn-overlayStroke-color1) 0%,
+      var(--primary-btn-overlayStroke-color2) 100%
+    )
+      border-box;
+}
+
+/* Pressed — Figma reverses stroke gradient stops vs up */
+.overlay.overlayDown,
+.root[data-button-variant="interactive"]:not(:disabled):active .overlay,
+.root[data-button-variant="controlled"][data-visual-state="down"] .overlay.overlayDown {
+  background:
+    linear-gradient(var(--primary-btn-overlay-color2), var(--primary-btn-overlay-color2)) padding-box,
+    linear-gradient(
+      var(--overlay-stroke-angle),
+      var(--primary-btn-overlayStroke-color2) 0%,
+      var(--primary-btn-overlayStroke-color1) 100%
+    )
+      border-box;
+}
+
+/* Disabled */
+.overlay.overlayDisabled,
+.root[data-button-variant="interactive"]:disabled .overlay,
+.root[data-button-variant="controlled"][data-visual-state="disabled"] .overlay.overlayDisabled {
+  background:
+    linear-gradient(var(--primary-btn-overaly-color3), var(--primary-btn-overaly-color3)) padding-box,
+    linear-gradient(
+      var(--overlay-stroke-angle),
+      var(--primary-btn-overlayStroke-color1) 0%,
+      var(--primary-btn-overlayStroke-color2) 100%
+    )
+      border-box;
+}
+
+.labelsEnabled {
+  display: contents;
+}
+
+.root:disabled .labelsEnabled {
+  display: none;
+}
+
+.labelsDisabled {
+  display: none;
+}
+
+.root:disabled .labelsDisabled {
+  display: block;
+}
+
+.labelShadow {
+  position: absolute;
+  inset: 11.54% 2.63% 7.69% 3.29%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: var(--primary-btn-label-size);
+  line-height: 0;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primary-btn-overlay-color2);
+  pointer-events: none;
+}
+
+.labelTop {
+  position: absolute;
+  inset: 13.46% 2.63% 5.77% 3.29%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: var(--primary-btn-label-size);
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primary-btn-label-color);
+  pointer-events: none;
+}
+
+.labelDisabled {
+  position: absolute;
+  inset: 13.46% 2.63% 5.77% 3.29%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: var(--primary-btn-label-size);
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primary-btn-label-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.labelShadow p,
+.labelTop p,
+.labelDisabled p {
+  margin: 0;
+}
+
+.accent {
+  position: absolute;
+  inset: 9.62% 82.24% 67.31% 3.29%;
+  pointer-events: none;
+}
+
+.accentInner {
+  position: absolute;
+  inset: 0 0 -4% 0;
+}
+
+.accentInner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* Figma Property 1=Variant5 — collapse control (right segment + chevron) */
+.rootCollapse .backer {
+  inset: 0 0 0 56.67%;
+}
+
+.rootCollapse .base {
+  inset: 2% 0 2% 56.67%;
+}
+
+.rootCollapse .overlay {
+  inset: 4% 0.67% 4% 57.33%;
+}
+
+.rootCollapse .accent {
+  inset: 9.62% 26.24% 67.31% 59.29%;
+}
+
+.rootCollapse .labelsEnabled,
+.rootCollapse .labelsDisabled {
+  display: none;
+}
+
+.chevronBack {
+  position: absolute;
+  inset: 24% 12.67% 20% 69.33%;
+  pointer-events: none;
+}
+
+.chevronFront {
+  position: absolute;
+  inset: 26% 12.67% 18% 69.33%;
+  pointer-events: none;
+}
+
+.chevronInner {
+  position: absolute;
+  inset: 11.31% 14.47% 25% 14.47%;
+}
+
+.chevronBack img,
+.chevronFront img,
+.chevronInner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}

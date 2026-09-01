@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--image-fpo-surface);
+  flex-shrink: 0;
+}
+
+.full {
+  width: var(--layout-image-caption-width);
+  max-width: 100%;
+  height: 624px;
+}
+
+.side {
+  width: var(--layout-image-fpo-side-width);
+  height: var(--layout-image-fpo-side-height);
+}
+
+.half {
+  width: var(--layout-image-fpo-half-width);
+  height: var(--layout-image-fpo-half-height);
+}
+
+.label {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--font-prinary-size);
+  line-height: normal;
+  color: var(--image-fpo-label-color);
+  text-align: center;
+  white-space: nowrap;
+}

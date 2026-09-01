@@ -1,0 +1,20 @@
+/**
+ * Paint geometry read from Figma (node 935:987 / 891:1121).
+ * Color stops bind to tokens; angle/stops/shadows are not yet in the variable collection.
+ */
+[data-theme] {
+  /* a11y-expanded (1040:1762) */
+  --panel-surface-gradient-angle-expanded: 120.261deg;
+  /* a11y-closed (942:1138) */
+  --panel-surface-gradient-angle-closed: 169.146deg;
+  --panel-surface-gradient-stop-a: 17.288%;
+  --panel-surface-gradient-stop-b: 80.356%;
+  --panel-elevation-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.25);
+  --mini-block-inset-shadow: inset 0 4px 20px rgba(255, 255, 255, 0.25);
+  /* image FPO — pending dedicated tokens */
+  --image-fpo-surface: #d9d9d9;
+  --image-fpo-label-color: #000000;
+  /* layout radii — pending dedicated tokens */
+  --image-block-radius: 4px;
+  --image-container-radius: 10px;
+}

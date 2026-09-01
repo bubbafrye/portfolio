@@ -1,0 +1,812 @@
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  color: #085273;
+}
+
+.highlighted {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.accentBorder {
+  border-left: 4px solid var(--accent-border, var(--panel-accent-dark));
+}
+
+/* Figma accent sections — border-l stroke/l (4px), no extra padding on the stroke */
+.accentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-left: 4px solid var(--accent-border, var(--panel-accent-dark));
+  box-sizing: border-box;
+}
+
+.accentSection[data-gap="sm"] {
+  gap: 10px;
+}
+
+.accentSection[data-gap="md"] {
+  gap: 15px;
+}
+
+.accentSection[data-gap="xl"] {
+  gap: 30px;
+}
+
+.accentSection[data-align="start"] {
+  align-items: flex-start;
+}
+
+.accentSection[data-align="center"] {
+  align-items: center;
+}
+
+.accentSection[data-inset] {
+  padding-inline: 15px;
+}
+
+.accentTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  color: #085273;
+}
+
+.accentTextBlock h3 {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: normal;
+  max-width: 600px;
+}
+
+.accentTextBlock p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  white-space: pre-wrap;
+}
+
+.accentTextBlock[data-lead="normal"] p {
+  line-height: normal;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: normal;
+}
+
+.subheading {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: normal;
+}
+
+.body {
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+}
+
+.body p {
+  margin: 0;
+}
+
+.miniGrid {
+  display: grid;
+  gap: 15px;
+  width: 100%;
+}
+
+.miniGrid[data-columns="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.miniGrid[data-columns="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.miniBlock {
+  min-height: 330px;
+  padding: 20px 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: var(--mini-bg, var(--panel-accent-dark));
+  color: var(--font-color);
+}
+
+.miniTitle {
+  margin: 0 0 15px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.miniBody {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  white-space: pre-wrap;
+}
+
+.imageRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-left: 4px solid var(--accent-border, var(--panel-accent-dark));
+  box-sizing: border-box;
+  gap: 10px;
+  align-items: center;
+}
+
+.imageRowTop {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
+
+.imageRowTop[data-layout="contrast"] .imageRowText {
+  flex: 0 0 600px;
+  max-width: 600px;
+}
+
+.imageRowTop[data-layout="contrast"] .imageSlot {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.imageRowTop[data-layout="contrast"] .imageSlot img {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+}
+
+.imageRowTop[data-media-position="left"] .imageSlot {
+  flex: 0 0 640px;
+}
+
+.imageRowTop[data-media-position="left"] .imageRowText {
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 240px;
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
+
+.imageRowText {
+  flex: 0 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #085273;
+}
+
+.imageRowTop[data-text-only] .imageRowText {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 240px;
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
+
+.imageRowText p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  white-space: pre-wrap;
+}
+
+.imageSlot {
+  margin: 0;
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.imageSlot img,
+.placeholder {
+  width: 100%;
+  max-width: 640px;
+  height: 480px;
+  object-fit: cover;
+}
+
+.placeholder {
+  background: rgba(209, 38, 38, 0.25);
+}
+
+.imageSlot figcaption {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.imageRowBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
+
+.imageRowFooter {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  color: #085273;
+  white-space: pre-wrap;
+}
+
+.imageGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  border-left: 4px solid var(--accent-border, var(--panel-accent-dark));
+  box-sizing: border-box;
+}
+
+.imageGalleryIntro {
+  padding-inline: 20px;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  color: #085273;
+}
+
+.imageGalleryIntro p {
+  margin: 0;
+}
+
+.imageGalleryIntro strong {
+  font-weight: 700;
+}
+
+.imageGalleryGrid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+.gallerySlot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 280px;
+  max-width: 387px;
+}
+
+.gallerySlot img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+}
+
+.gallerySlot figcaption {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.dualImages {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.keyboardGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding-block: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.keyboardGalleryRow {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding-block: 10px;
+  box-sizing: border-box;
+}
+
+.keyboardGalleryRow .keyboardSlotFixed,
+.keyboardGalleryRow .keyboardSlotFlex {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.keyboardGalleryRow .keyboardSlotFixed img,
+.keyboardGalleryRow .keyboardSlotFixed video,
+.keyboardGalleryRow .keyboardSlotFlex img,
+.keyboardGalleryRow .keyboardSlotFlex video {
+  height: 450px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.keyboardGalleryRow figcaption {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: #000;
+}
+
+.pairedGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding-block: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.pairedGalleryRow {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-block: 10px;
+  box-sizing: border-box;
+}
+
+.pairedGalleryRow .pairedSlot {
+  flex: 0 0 600px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pairedGalleryRow .pairedSlot img {
+  width: 600px;
+  height: 450px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.pairedGalleryRow figcaption {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: #000;
+  width: 100%;
+}
+
+.resultList {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: normal;
+}
+
+.resultList li {
+  margin-left: 39px;
+}
+
+.resultList li + li {
+  margin-top: 0;
+}
+
+.imageStrip {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  align-items: flex-start;
+  width: 100%;
+  padding-inline: 22px;
+  border-left: 4px solid var(--accent-border, var(--panel-accent-dark));
+  box-sizing: border-box;
+}
+
+.imageStripIntro {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  color: #000;
+}
+
+.imageStripRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.stripSlot {
+  flex: 0 0 280px;
+  margin: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.stripSlot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.challengeGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--accent-border, var(--panel-accent-dark));
+}
+
+.accentDetailMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-inline: 15px;
+  box-sizing: border-box;
+  color: #085273;
+}
+
+.accentDetailMain p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: normal;
+  white-space: pre-wrap;
+}
+
+.accentDetailTextImg {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 15px;
+  box-sizing: border-box;
+}
+
+.accentDetailTextBlock {
+  flex: 0 0 600px;
+  max-width: 600px;
+  padding-inline: 15px;
+  box-sizing: border-box;
+}
+
+.accentDetailTextBlock p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 38px;
+  color: #085273;
+  white-space: pre-wrap;
+}
+
+.accentDetailImage {
+  flex: 0 0 600px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.accentDetailImage img {
+  width: 600px;
+  height: 450px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.accentDetailImage figcaption {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: #000;
+  width: 100%;
+}
+
+.accentDetailPanel {
+  width: 100%;
+  padding: 20px 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  color: #085273;
+}
+
+.accentDetailPanel[data-position="top"] {
+  border-radius: 8px 8px 0 0;
+}
+
+.accentDetailPanel[data-position="bottom"] {
+  border-radius: 0 0 8px 8px;
+}
+
+.accentDetailPanel h3 {
+  margin: 0 0 20px;
+}
+
+.accentDetailPanel p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: normal;
+  white-space: pre-wrap;
+}
+
+.wideImage {
+  margin: 0;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wideImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.wideImage[data-fixed-height="200"] img {
+  height: 200px;
+}
+
+.wideImage figcaption {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: #000;
+}
+
+.projectCards {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.projectCards[data-align="start"] {
+  justify-content: flex-start;
+}
+
+.projectCard {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 0 0 605px;
+  width: 605px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #000;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.projectCard:hover,
+.projectCard:focus-visible {
+  background: var(--panel-selected);
+  color: #fff;
+  outline: none;
+}
+
+.projectCardLeft {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.projectCardMedia,
+.projectCardFauxBtn {
+  position: absolute;
+  inset: 0;
+  transition: opacity 150ms ease;
+}
+
+.projectCardMedia img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.projectCardFauxBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 8px;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.projectCard:hover .projectCardMedia,
+.projectCard:focus-visible .projectCardMedia {
+  opacity: 0;
+}
+
+.projectCard:hover .projectCardFauxBtn,
+.projectCard:focus-visible .projectCardFauxBtn {
+  opacity: 1;
+}
+
+.projectCardFauxBtnInner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 137px;
+  height: 43px;
+}
+
+.projectCardFauxBtnHighlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 137px;
+  height: 40px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.projectCardFauxBtnLabel {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 38px;
+  color: #fff;
+  text-align: center;
+}
+
+.projectCardText {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.projectCard h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.projectCard p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 1.45;
+  color: inherit;
+}
+
+@media (max-width: 900px) {
+  .miniGrid[data-columns="3"],
+  .miniGrid[data-columns="2"] {
+    grid-template-columns: 1fr;
+  }
+
+  .imageRowTop {
+    flex-direction: column;
+  }
+
+  .imageRowText {
+    flex-basis: auto;
+  }
+
+  .accentDetailTextImg {
+    flex-direction: column;
+  }
+
+  .accentDetailTextBlock,
+  .accentDetailImage {
+    flex-basis: auto;
+    max-width: 100%;
+  }
+
+  .accentDetailImage img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+  }
+
+  .imageStripRow {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 19px;
+  }
+
+  .pairedGalleryRow {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .projectCards {
+    flex-wrap: wrap;
+  }
+
+  .projectCard {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectCard,
+  .projectCardMedia,
+  .projectCardFauxBtn {
+    transition: none;
+  }
+}

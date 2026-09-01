@@ -1,0 +1,11 @@
+.hierarchy {
+  margin: 0;
+  padding-left: 33px;
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.hierarchy li + li {
+  margin-top: 0.25em;
+}

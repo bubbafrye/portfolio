@@ -1,0 +1,19 @@
+/**
+ * Layout values not yet in the Figma variable collection.
+ * Spacing uses spacing/* tokens via tokens.css.
+ */
+:root {
+  --layout-page-panel-left: 100px;
+  --layout-page-panel-top: 55px;
+  --layout-spacer-width: 100px;
+  --layout-panel-back-to-top-overshoot: 100px;
+  --layout-spacer-height: 30px;
+  /* mini-block py 25 — still hardcoded in Figma (891:1178 parent), no token */
+  --layout-mini-block-py: 25px;
+  --layout-image-insert-text-height: 307px;
+  --layout-image-fpo-side-width: 421px;
+  --layout-image-fpo-side-height: 316px;
+  --layout-image-fpo-half-width: 500px;
+  --layout-image-fpo-half-height: 404px;
+  --layout-image-caption-width: 832px;
+}

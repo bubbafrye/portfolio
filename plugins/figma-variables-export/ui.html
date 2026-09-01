@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio Variables Export</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 16px;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0 0 12px;
+        color: var(--figma-color-text-secondary, #666);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        margin-top: 4px;
+        padding: 8px;
+        border: 1px solid var(--figma-color-border, #ccc);
+        border-radius: 6px;
+        background: var(--figma-color-bg, #fff);
+        color: inherit;
+      }
+
+      .row {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      button {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button.primary {
+        background: var(--figma-color-bg-brand, #0d99ff);
+        color: #fff;
+      }
+
+      button.secondary {
+        background: var(--figma-color-bg-secondary, #f0f0f0);
+        color: inherit;
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .checks label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        font-weight: 400;
+      }
+
+      .checks input {
+        margin: 0;
+      }
+
+      #stats,
+      #warnings {
+        margin-bottom: 12px;
+        padding: 10px;
+        border-radius: 6px;
+        background: var(--figma-color-bg-secondary, #f5f5f5);
+      }
+
+      #warnings {
+        display: none;
+        background: #fff4e5;
+        color: #8a5200;
+      }
+
+      #warnings.visible {
+        display: block;
+      }
+
+      textarea {
+        width: 100%;
+        height: 180px;
+        padding: 8px;
+        border: 1px solid var(--figma-color-border, #ccc);
+        border-radius: 6px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+        resize: vertical;
+      }
+
+      .status {
+        min-height: 18px;
+        margin-top: 8px;
+        color: var(--figma-color-text-secondary, #666);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio Variables Export</h1>
+    <p>
+      Exports lean schema v1 JSON (names, types, resolved values) for
+      <code>npm run tokens:build</code>. Verbose mode adds IDs, CSS hints, and alias metadata.
+    </p>
+
+    <label>
+      Output file name (logical)
+      <input id="fileName" type="text" value="portfolio" />
+    </label>
+
+    <div class="checks">
+      <label>
+        <input id="includeHidden" type="checkbox" checked />
+        Include variables hidden from publishing
+      </label>
+      <label>
+        <input id="verboseExport" type="checkbox" />
+        Verbose export (IDs, CSS hints, alias metadata, timestamps)
+      </label>
+    </div>
+
+    <div class="row">
+      <button id="exportBtn" class="primary" type="button">Export JSON</button>
+      <button id="copyBtn" class="secondary" type="button" disabled>Copy</button>
+      <button id="downloadBtn" class="secondary" type="button" disabled>Download</button>
+    </div>
+
+    <div id="stats">Run export to preview stats.</div>
+    <div id="warnings"></div>
+
+    <textarea id="output" readonly placeholder="Exported JSON appears here…"></textarea>
+    <div id="status" class="status"></div>
+
+    <script>
+      const exportBtn = document.getElementById("exportBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
+      const output = document.getElementById("output");
+      const stats = document.getElementById("stats");
+      const warnings = document.getElementById("warnings");
+      const status = document.getElementById("status");
+
+      let latestJson = "";
+
+      exportBtn.onclick = () => {
+        exportBtn.disabled = true;
+        status.textContent = "Exporting…";
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: "EXPORT",
+              options: {
+                fileName: document.getElementById("fileName").value.trim() || "portfolio",
+                includeHidden: document.getElementById("includeHidden").checked,
+                lean: !document.getElementById("verboseExport").checked,
+              },
+            },
+          },
+          "*",
+        );
+      };
+
+      copyBtn.onclick = async () => {
+        if (!latestJson) return;
+        await navigator.clipboard.writeText(latestJson);
+        status.textContent = "Copied to clipboard.";
+      };
+
+      downloadBtn.onclick = () => {
+        if (!latestJson) return;
+        const blob = new Blob([latestJson], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "figma-variables.json";
+        link.click();
+        URL.revokeObjectURL(url);
+        status.textContent = "Download started.";
+      };
+
+      window.onmessage = (event) => {
+        const msg = event.data.pluginMessage;
+        if (!msg) return;
+
+        if (msg.type === "PLUGIN_READY") {
+          const key = msg.figmaFileKey;
+          status.textContent = key
+            ? `Ready. File key: ${key}`
+            : "Ready. File key unavailable — re-import manifest after updating enablePrivatePluginApi.";
+          return;
+        }
+
+        if (msg.type === "EXPORT_SUCCESS") {
+          latestJson = JSON.stringify(msg.payload, null, 2);
+          output.value = latestJson;
+          copyBtn.disabled = false;
+          downloadBtn.disabled = false;
+          exportBtn.disabled = false;
+
+          const collections = msg.payload.collections || [];
+          const variableCount = collections.reduce((n, c) => n + (c.variables?.length || 0), 0);
+          const modeCount = collections[0]?.modes?.length || 0;
+          const format = msg.payload.stats ? "verbose" : "lean";
+          const fileKey = msg.payload.figmaFileKey || "unavailable";
+          stats.textContent = `${collections.length} collection(s), ${variableCount} variable(s), ${modeCount} mode(s). Schema v${msg.payload.schemaVersion} (${format}). File key: ${fileKey}.`;
+
+          if (msg.payload.warnings && msg.payload.warnings.length > 0) {
+            warnings.className = "visible";
+            warnings.textContent =
+              "Warnings: " +
+              msg.payload.warnings
+                .map((w) => `${w.variable} (${w.mode}): ${w.message}`)
+                .join(" · ");
+          } else {
+            warnings.className = "";
+            warnings.textContent = "";
+          }
+
+          status.textContent = "Export complete. Save to design-tokens/figma-variables.json, then run npm run tokens:build.";
+        }
+
+        if (msg.type === "EXPORT_ERROR") {
+          exportBtn.disabled = false;
+          status.textContent = msg.message;
+        }
+      };
+    </script>
+  </body>
+</html>

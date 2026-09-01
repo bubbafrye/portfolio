@@ -1,0 +1,1 @@
+export { TeamCaseStudy } from "./TeamCaseStudy";
