@@ -1,3 +1,1 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="181" height="30.3568" viewBox="0 0 181 30.3568" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="pointer" d="M0 5C0 2.23858 2.23858 0 5 0H90.5H176C178.761 0 181 2.23858 181 5V15.1683C181 17.7009 179.106 19.8335 176.592 20.1332L91.0916 30.3217C90.6986 30.3685 90.3014 30.3685 89.9084 30.3217L4.40837 20.1332C1.89358 19.8335 0 17.7009 0 15.1683V5Z" fill="#388055"/>
-</svg>
+<svg display="block" fill="none" height="30.3568" preserveAspectRatio="none" viewBox="0 0 181 30.3568" width="181" xmlns="http://www.w3.org/2000/svg"><path d="m0 5c0-2.76142 2.23858-5 5-5h85.5 85.5c2.761 0 5 2.23858 5 5v10.1683c0 2.5326-1.894 4.6652-4.408 4.9649l-85.5004 10.1885c-.393.0468-.7902.0468-1.1832 0l-85.50003-10.1885c-2.51479-.2997-4.40837-2.4323-4.40837-4.9649z" fill="#388055"/></svg>

@@ -1,18 +1,1 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="305" height="51" viewBox="0 0 305 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="tail" filter="url(#filter0_d_0_71)">
-<path id="Rectangle 4" opacity="0" d="M123.108 5.34167e-06C123.108 23.6306 213 43 213 43C213 43 0 34.0901 0 5.34167e-06C46.3945 4.50944e-05 72.4923 -1.7991e-05 123.108 5.34167e-06Z" fill="white"/>
-<path id="Rectangle 5" d="M278.082 5.34167e-06C278.082 23.6306 301 43 301 43C301 43 252.5 43 223 5.34167e-06C239.99 4.50944e-05 259.546 -1.7991e-05 278.082 5.34167e-06Z" fill="white"/>
-</g>
-<defs>
-<filter id="filter0_d_0_71" x="-4" y="0" width="309" height="51" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_71"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_71" result="shape"/>
-</filter>
-</defs>
-</svg>
+<svg display="block" fill="none" height="51" preserveAspectRatio="none" viewBox="0 0 305 51" width="305" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><filter id="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="51" width="309" x="-4" y="0"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_0_71"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_0_71" mode="normal" result="shape"/></filter><g fill="#fff" filter="url(#a)"><path d="m123.108.00000534c0 23.63059466 89.892 42.99999466 89.892 42.99999466s-213-8.9099-213-42.99999466c46.3945.00003975 72.4923-.00002333 123.108 0z" opacity="0"/><path d="m278.082.00000534c0 23.63059466 22.918 42.99999466 22.918 42.99999466s-48.5 0-78-42.99999466c16.99.00003975 36.546-.00002333 55.082 0z"/></g></svg>
