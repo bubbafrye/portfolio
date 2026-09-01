@@ -8,6 +8,7 @@ import blockStyles from "../CsPanel/CsBlocks.module.css";
 type CsKeyboardNavProps = {
   expanded: boolean;
   collapsing: boolean;
+  skipSwapTransition?: boolean;
   onClose: () => void;
   onCollapseComplete: () => void;
   onBackToTop?: () => void;
@@ -16,6 +17,7 @@ type CsKeyboardNavProps = {
 export function CsKeyboardNav({
   expanded,
   collapsing,
+  skipSwapTransition,
   onClose,
   onCollapseComplete,
   onBackToTop,
@@ -173,6 +175,7 @@ export function CsKeyboardNav({
       id={c.id}
       expanded={expanded}
       collapsing={collapsing}
+      skipSwapTransition={skipSwapTransition}
       revealHeights={CS_KEYBOARD_NAV_REVEAL_HEIGHTS}
       onCollapseComplete={onCollapseComplete}
       onBackToTop={onBackToTop}

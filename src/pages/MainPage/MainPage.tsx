@@ -432,9 +432,15 @@ export function MainPage() {
 
   const csPanelActive = Boolean(csOpenId || csCollapsingId);
 
+  const csSwapping = Boolean(csPendingId);
+
+  const csPanelRendered = (id: CsPanelId) =>
+    csOpenId === id || csCollapsingId === id || csPendingId === id;
+
   const sharedCsPanelProps = (id: CsPanelId) => ({
     expanded: csOpenId === id && csDeferExpandId !== id,
     collapsing: csCollapsingId === id,
+    skipSwapTransition: csSwapping && (csCollapsingId === id || csPendingId === id),
     onClose: () => handleCsToggle(id),
     onCollapseComplete: () => handleCsCollapseComplete(id),
     onBackToTop: scrollTlDrIntoView,
@@ -469,7 +475,12 @@ export function MainPage() {
           </Suspense>
         </div>
       )}
-      <div ref={tlDrRef} className={styles.section} data-section-anchor="tl-dr">
+      <div
+        ref={tlDrRef}
+        className={`${styles.section} ${styles.tlDrSection}`}
+        data-section-anchor="tl-dr"
+        data-theme="tl-dr"
+      >
         <TlDr
           variant="wide"
           links={TL_DR_LINKS}
@@ -478,10 +489,10 @@ export function MainPage() {
         />
         {csPanelActive && (
           <div ref={csPanelRef} className={styles.expandedPanel}>
-            {(csOpenId === "cs-drag-drop" || csCollapsingId === "cs-drag-drop") && (
+            {csPanelRendered("cs-drag-drop") && (
               <CsDragDrop {...sharedCsPanelProps("cs-drag-drop")} />
             )}
-            {(csOpenId === "cs-keyboard-nav" || csCollapsingId === "cs-keyboard-nav") && (
+            {csPanelRendered("cs-keyboard-nav") && (
               <CsKeyboardNav {...sharedCsPanelProps("cs-keyboard-nav")} />
             )}
           </div>

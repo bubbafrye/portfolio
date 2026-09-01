@@ -13,6 +13,10 @@
   width: 100%;
 }
 
+.tlDrSection {
+  background: var(--panel-base);
+}
+
 .expandedPanel {
   width: 100%;
 }

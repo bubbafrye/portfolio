@@ -8,6 +8,7 @@ import blockStyles from "../CsPanel/CsBlocks.module.css";
 type CsDragDropProps = {
   expanded: boolean;
   collapsing: boolean;
+  skipSwapTransition?: boolean;
   onClose: () => void;
   onCollapseComplete: () => void;
   onBackToTop?: () => void;
@@ -16,6 +17,7 @@ type CsDragDropProps = {
 export function CsDragDrop({
   expanded,
   collapsing,
+  skipSwapTransition,
   onClose,
   onCollapseComplete,
   onBackToTop,
@@ -165,6 +167,7 @@ export function CsDragDrop({
       id={c.id}
       expanded={expanded}
       collapsing={collapsing}
+      skipSwapTransition={skipSwapTransition}
       revealHeights={CS_DRAG_DROP_REVEAL_HEIGHTS}
       onCollapseComplete={onCollapseComplete}
       onBackToTop={onBackToTop}

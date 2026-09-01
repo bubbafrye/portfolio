@@ -49,6 +49,8 @@ export type CsPanelProps = {
   id: string;
   expanded: boolean;
   collapsing: boolean;
+  /** Skip opacity fade when swapping between cs-* panels. */
+  skipSwapTransition?: boolean;
   revealHeights: readonly number[];
   onCollapseComplete: () => void;
   onBackToTop?: () => void;
@@ -61,6 +63,7 @@ export function CsPanel({
   id,
   expanded,
   collapsing,
+  skipSwapTransition = false,
   revealHeights,
   onCollapseComplete,
   onBackToTop,
@@ -71,7 +74,7 @@ export function CsPanel({
   const sectionRef = useRef<HTMLElement>(null);
   const fadeTimerRef = useRef<number | null>(null);
   const [fadingOut, setFadingOut] = useState(false);
-  const [loadHidden, setLoadHidden] = useState(() => !reducedMotion);
+  const [loadHidden, setLoadHidden] = useState(() => skipSwapTransition || !reducedMotion);
   const onCollapseCompleteRef = useRef(onCollapseComplete);
   onCollapseCompleteRef.current = onCollapseComplete;
   const {
@@ -97,7 +100,7 @@ export function CsPanel({
       return;
     }
 
-    if (reducedMotion) {
+    if (reducedMotion || skipSwapTransition) {
       resetStagger();
       onCollapseCompleteRef.current();
       return;
@@ -120,9 +123,13 @@ export function CsPanel({
       cancelAnimationFrame(raf2);
       if (fadeTimerRef.current !== null) window.clearTimeout(fadeTimerRef.current);
     };
-  }, [collapsing, reducedMotion, resetStagger]);
+  }, [collapsing, reducedMotion, resetStagger, skipSwapTransition]);
 
   useEffect(() => {
+    if (skipSwapTransition) {
+      setLoadHidden(false);
+      return;
+    }
     if (reducedMotion || collapsing || fadingOut) return;
     if (!expanded) {
       setLoadHidden(true);
@@ -137,7 +144,7 @@ export function CsPanel({
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
     };
-  }, [collapsing, expanded, fadingOut, reducedMotion]);
+  }, [collapsing, expanded, fadingOut, reducedMotion, skipSwapTransition]);
 
   const reveal: RevealFn = (index, placeholderMinHeight, child) => (
     <PanelRevealSection
