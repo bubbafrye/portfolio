@@ -70,7 +70,7 @@ export const parkCaseStudy = {
         alt: "Image of Sticker Book in product",
       },
       {
-        src: `${base}assets/park/collections/04-full.png`,
+        src: `${base}assets/park/collections/04-full.jpg`,
         caption: "Early mockup of Sticker Book",
         alt: "Early mockup of Sticker Book",
       },

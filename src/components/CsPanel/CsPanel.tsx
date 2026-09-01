@@ -9,6 +9,10 @@ import { SeeMoreBtn } from "../SeeMoreBtn";
 import { PanelRevealSection } from "../PanelRevealSection";
 import styles from "./CsPanel.module.css";
 
+/** Hero 202px + overview padding-block 40px — placeholder before overview mounts. */
+const CS_OVERVIEW_REVEAL_HEIGHT = 242;
+const OVERVIEW_SECTION_INDEX = 0;
+
 export type RevealFn = (index: number, placeholderMinHeight: number, child: ReactNode) => ReactNode;
 
 export type CsOverviewProps = {
@@ -73,6 +77,7 @@ export function CsPanel({
   const reducedMotion = usePrefersReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const fadeTimerRef = useRef<number | null>(null);
+  const skipPanelLoadFadeRef = useRef(skipSwapTransition);
   const [fadingOut, setFadingOut] = useState(false);
   const [loadHidden, setLoadHidden] = useState(() => skipSwapTransition || !reducedMotion);
   const onCollapseCompleteRef = useRef(onCollapseComplete);
@@ -82,7 +87,7 @@ export function CsPanel({
     registerSlot,
     handleSectionEnterView,
     resetStagger,
-  } = useStaggeredReveal(revealHeights.length);
+  } = useStaggeredReveal(revealHeights.length + 1);
 
   const scrollToTop = useCallback(() => {
     if (onBackToTop) {
@@ -126,7 +131,11 @@ export function CsPanel({
   }, [collapsing, reducedMotion, resetStagger, skipSwapTransition]);
 
   useEffect(() => {
-    if (skipSwapTransition) {
+    if (skipSwapTransition) skipPanelLoadFadeRef.current = true;
+  }, [skipSwapTransition]);
+
+  useEffect(() => {
+    if (skipSwapTransition || skipPanelLoadFadeRef.current) {
       setLoadHidden(false);
       return;
     }
@@ -146,23 +155,27 @@ export function CsPanel({
     };
   }, [collapsing, expanded, fadingOut, reducedMotion, skipSwapTransition]);
 
-  const reveal: RevealFn = (index, placeholderMinHeight, child) => (
-    <PanelRevealSection
-      key={index}
-      sectionIndex={index}
-      expanded={expanded || collapsing}
-      collapsing={collapsing}
-      staggerDelayMs={staggerDelays[index] ?? 0}
-      placeholderMinHeight={placeholderMinHeight}
-      reducedMotion={reducedMotion}
-      onSlotRef={(el) => registerSlot(index, el)}
-      onEnterView={handleSectionEnterView}
-    >
-      {child}
-    </PanelRevealSection>
-  );
+  const reveal: RevealFn = (index, placeholderMinHeight, child) => {
+    const sectionIndex = index + 1;
+    return (
+      <PanelRevealSection
+        key={index}
+        sectionIndex={sectionIndex}
+        expanded={expanded || collapsing}
+        collapsing={collapsing}
+        staggerDelayMs={staggerDelays[sectionIndex] ?? 0}
+        placeholderMinHeight={placeholderMinHeight}
+        reducedMotion={reducedMotion}
+        onSlotRef={(el) => registerSlot(sectionIndex, el)}
+        onEnterView={handleSectionEnterView}
+      >
+        {child}
+      </PanelRevealSection>
+    );
+  };
 
   const showBody = expanded || collapsing || fadingOut;
+  const sectionExpanded = expanded || collapsing;
 
   return (
     <section
@@ -176,7 +189,20 @@ export function CsPanel({
       data-expanded={showBody || undefined}
     >
       <div className={styles.inner}>
-        {showBody && overview}
+        {showBody && (
+          <PanelRevealSection
+            sectionIndex={OVERVIEW_SECTION_INDEX}
+            expanded={sectionExpanded}
+            collapsing={collapsing}
+            staggerDelayMs={staggerDelays[OVERVIEW_SECTION_INDEX] ?? 0}
+            placeholderMinHeight={CS_OVERVIEW_REVEAL_HEIGHT}
+            reducedMotion={reducedMotion}
+            onSlotRef={(el) => registerSlot(OVERVIEW_SECTION_INDEX, el)}
+            onEnterView={handleSectionEnterView}
+          >
+            {overview}
+          </PanelRevealSection>
+        )}
         <div
           className={[styles.bodyGrid, showBody && styles.bodyGridExpanded].filter(Boolean).join(" ")}
         >
