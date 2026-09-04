@@ -1,0 +1,1 @@
+export { BlurbsFooter } from "./BlurbsFooter";

@@ -1,14 +1,12 @@
 import { SeeMoreBtn } from "../SeeMoreBtn";
 import styles from "./HomeModule.module.css";
 
-export type HomeVariant = "full" | "blurbs";
 export type HomeTarget = "projects" | "teams" | "tools";
 
 type HomeModuleProps = {
-  variant: HomeVariant;
-  onVariantChange: (variant: HomeVariant) => void;
   onNavigate: (target: HomeTarget) => void;
   onOpenResume: () => void;
+  onScrollToBlurbs: () => void;
 };
 
 const HOME_ASSETS = {
@@ -16,7 +14,6 @@ const HOME_ASSETS = {
   mail: `${import.meta.env.BASE_URL}assets/home/mail.svg`,
   resume: `${import.meta.env.BASE_URL}assets/home/resume.svg`,
   linkedin: `${import.meta.env.BASE_URL}assets/home/linkedin.svg`,
-  blurbTail: `${import.meta.env.BASE_URL}assets/home/blurb-tail.svg`,
 } as const;
 
 const contactItems = [
@@ -59,27 +56,6 @@ const navItems: Array<{ label: string; target: HomeTarget }> = [
   { label: "Projects", target: "projects" },
   { label: "Teams", target: "teams" },
   { label: "Tools", target: "tools" },
-];
-
-const blurbs = [
-  {
-    quote:
-      "Jason is the kind of leader who makes teams better. He is intentional about defining workflows, streamlining processes, and building efficiencies that help people do their best work. At the same time, he is a hands-on leader who is willing to roll up his sleeves when needed, whether that means supporting his team, solving a design challenge, or helping meet an important deadline.",
-    name: "Sara Scarbrough",
-    role: "Director, Curriculum & Instruction",
-    tall: true,
-  },
-  {
-    quote:
-      "He’s all right. Taught me everything I needed to know about grilled cheese. Definitely recommend.",
-    name: "Elliott Hurst Frye",
-    role: "Son",
-  },
-  {
-    quote: "Jason is able to turn customer insights into a better user experience.  Beyond his design skills, Jason is a strong thought partner, a great collaborator, and someone who consistently goes above and beyond to make the product better.  I would recommend him without hesitation.",
-    name: "Kevin Shanahan",
-    role: "Sr. Director, Product Management",
-  },
 ];
 
 function NavButton({
@@ -149,40 +125,9 @@ function ContactButtons({ onOpenResume }: { onOpenResume: () => void }) {
   );
 }
 
-function Blurbs() {
+export function HomeModule({ onNavigate, onOpenResume, onScrollToBlurbs }: HomeModuleProps) {
   return (
-    <div className={styles.blurbs} data-figma-name="blurbs">
-      {blurbs.map((blurb, index) => (
-        <article
-          className={[styles.blurb, blurb.tall && styles.blurbTall].filter(Boolean).join(" ")}
-          key={blurb.name}
-          style={{ animationDelay: `calc(${index} * var(--anim-timing-stagger))` }}
-        >
-          <div className={styles.blurbBubble}>
-            <div className={styles.quoteMark}>“</div>
-            <div className={styles.blurbBody}>
-              <p>{blurb.quote}</p>
-              <footer>
-                <span>- {blurb.name}</span>
-                <span>{blurb.role}</span>
-              </footer>
-            </div>
-          </div>
-          <img className={styles.blurbTail} src={HOME_ASSETS.blurbTail} alt="" aria-hidden />
-        </article>
-      ))}
-    </div>
-  );
-}
-
-export function HomeModule({ variant, onVariantChange, onNavigate, onOpenResume }: HomeModuleProps) {
-  const showBlurbs = variant === "blurbs";
-
-  return (
-    <section
-      className={[styles.root, showBlurbs ? styles.blurbsRoot : styles.fullRoot].join(" ")}
-      data-figma-name={showBlurbs ? "home-blurbs" : "home-full"}
-    >
+    <section className={styles.root} data-figma-name="home-full">
       <div className={styles.inner}>
         <div className={styles.content}>
           <div className={styles.leftBlock} data-figma-name="left">
@@ -209,18 +154,11 @@ export function HomeModule({ variant, onVariantChange, onNavigate, onOpenResume 
             <h2>Reach out. Say hi.</h2>
             <p>Let’s build something together.</p>
             <ContactButtons onOpenResume={onOpenResume} />
-            <button
-              className={styles.blurbsButton}
-              type="button"
-              onClick={() => onVariantChange(showBlurbs ? "full" : "blurbs")}
-              aria-expanded={showBlurbs}
-            >
-              {showBlurbs ? "Press here to hide that nonsense." : "Check out what these folks say..."}
+            <button className={styles.blurbsButton} type="button" onClick={onScrollToBlurbs}>
+              Check out what these folks say...
             </button>
           </aside>
         </div>
-
-        {showBlurbs && <Blurbs />}
       </div>
     </section>
   );

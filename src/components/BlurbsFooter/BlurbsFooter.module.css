@@ -1,0 +1,126 @@
+.root {
+  width: 100%;
+  color: var(--font-color);
+  background: var(--panel-base);
+  font-family: var(--font-secondary);
+  box-sizing: border-box;
+  padding: 80px 30px 100px;
+}
+
+.blurbs {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+  width: min(1230px, calc(100vw - 50px));
+  margin-inline: auto;
+}
+
+.blurb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 27px;
+  opacity: 0;
+  transform: translateX(var(--anim-slide-distance));
+  animation: blurbReveal var(--anim-slide-in) var(--anim-ease-out) forwards;
+}
+
+.blurbBubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  min-height: 135px;
+  border-radius: 40px;
+  padding: 30px 15px;
+  background: #fff;
+  color: var(--font-color);
+  box-sizing: border-box;
+}
+
+.blurbTail {
+  display: block;
+  width: 301px;
+  height: 43px;
+  flex-shrink: 0;
+}
+
+.blurbTall .blurbBubble {
+  min-height: 400px;
+}
+
+.quoteMark {
+  flex: 0 0 33px;
+  align-self: stretch;
+  font-family: var(--font-primary);
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.blurbBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 317px;
+  padding-inline: 10px;
+  line-height: 27px;
+}
+
+.blurbBody p {
+  margin: 0;
+  width: 100%;
+  line-height: 27px;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  width: 100%;
+  line-height: 27px;
+  text-align: right;
+}
+
+@keyframes blurbReveal {
+  from {
+    opacity: 0;
+    transform: translateX(var(--anim-slide-distance));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blurb {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .root {
+    padding: 60px 24px 80px;
+  }
+
+  .blurbs {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .blurb,
+  .blurbBubble {
+    width: 100%;
+  }
+}

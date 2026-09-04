@@ -5,7 +5,8 @@ import { CaseStudyTile } from "../../components/CaseStudyTile";
 import { CaseStudyTileRow } from "../../components/CaseStudyTileRow";
 import { CsDragDrop } from "../../components/CsDragDrop";
 import { CsKeyboardNav } from "../../components/CsKeyboardNav";
-import { HomeModule, type HomeTarget, type HomeVariant } from "../../components/HomeModule";
+import { BlurbsFooter } from "../../components/BlurbsFooter";
+import { HomeModule, type HomeTarget } from "../../components/HomeModule";
 import { ParkCaseStudy } from "../../components/ParkCaseStudy";
 import { TeamCaseStudy } from "../../components/TeamCaseStudy";
 import { TlDr } from "../../components/TlDr";
@@ -180,7 +181,6 @@ function getInitialResumeOpen() {
 
 /** Figma main-page — node 1367:1526 */
 export function MainPage() {
-  const [homeVariant, setHomeVariant] = useState<HomeVariant>("full");
   const [resumeOpen, setResumeOpen] = useState(getInitialResumeOpen);
   const [{ openId, collapsingId, pendingId, deferExpandId }, dispatch] = useReducer(
     (state: AccordionState<CaseStudyId>, action: AccordionAction<CaseStudyId>) =>
@@ -206,6 +206,7 @@ export function MainPage() {
   const projectsPanelRef = useRef<HTMLDivElement>(null);
   const csPanelRef = useRef<HTMLDivElement>(null);
   const tlDrRef = useRef<HTMLDivElement>(null);
+  const blurbsRef = useRef<HTMLDivElement>(null);
   const resumeRef = useRef<HTMLDivElement>(null);
   const teamsToolsRowRef = useRef<HTMLDivElement>(null);
   const teamsToolsPanelRef = useRef<HTMLDivElement>(null);
@@ -232,6 +233,10 @@ export function MainPage() {
 
   const scrollTlDrIntoView = useCallback(() => {
     if (tlDrRef.current) scrollElementToTop(tlDrRef.current);
+  }, []);
+
+  const scrollBlurbsIntoView = useCallback(() => {
+    if (blurbsRef.current) scrollElementToTop(blurbsRef.current);
   }, []);
 
   const handleCollapseComplete = useCallback((id: CaseStudyId) => {
@@ -463,10 +468,9 @@ export function MainPage() {
   return (
     <div className={styles.page} data-figma-name="main-page">
       <HomeModule
-        variant={homeVariant}
-        onVariantChange={setHomeVariant}
         onNavigate={scrollToTarget}
         onOpenResume={openResume}
+        onScrollToBlurbs={scrollBlurbsIntoView}
       />
       {resumeOpen && (
         <div ref={resumeRef} className={styles.section} data-section-anchor="resume">
@@ -535,6 +539,9 @@ export function MainPage() {
             {(openId === "tools" || collapsingId === "tools") && <ToolsCaseStudy {...sharedCaseStudyProps("tools")} />}
           </div>
         )}
+      </div>
+      <div ref={blurbsRef} className={styles.section}>
+        <BlurbsFooter />
       </div>
     </div>
   );

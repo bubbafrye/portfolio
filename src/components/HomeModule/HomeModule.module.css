@@ -1,25 +1,14 @@
 .root {
   width: 100%;
+  min-height: 691px;
   color: var(--font-color);
   background: var(--panel-base);
   font-family: var(--font-secondary);
-  transition:
-    min-height 350ms var(--anim-ease-out),
-    padding 350ms var(--anim-ease-out);
-}
-
-.fullRoot {
-  min-height: 691px;
-}
-
-.blurbsRoot {
-  min-height: 1157px;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 80px;
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
@@ -60,8 +49,7 @@
 
 .introCopy p,
 .linksBlock p,
-.rightBlock p,
-.blurb p {
+.rightBlock p {
   margin: 0;
 }
 
@@ -205,99 +193,6 @@
   cursor: pointer;
 }
 
-.blurbs {
-  display: grid;
-  grid-template-columns: repeat(3, 400px);
-  align-items: start;
-  justify-content: center;
-  gap: 15px;
-  width: min(1230px, calc(100vw - 50px));
-  margin-inline: auto;
-}
-
-.blurb {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 27px;
-  opacity: 0;
-  transform: translateX(var(--anim-slide-distance));
-  animation: homeBlurbReveal var(--anim-slide-in) var(--anim-ease-out) forwards;
-}
-
-.blurbBubble {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  min-height: 135px;
-  border-radius: 40px;
-  padding: 30px 15px;
-  background: #fff;
-  color: var(--font-color);
-}
-
-.blurbTail {
-  display: block;
-  width: 301px;
-  height: 43px;
-  flex-shrink: 0;
-}
-
-.blurbTall .blurbBubble {
-  min-height: 400px;
-}
-
-.quoteMark {
-  flex: 0 0 33px;
-  align-self: stretch;
-  font-family: var(--font-primary);
-  font-size: 54px;
-  font-weight: 700;
-  line-height: 38px;
-}
-
-.blurbBody {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 317px;
-  padding-inline: 10px;
-  line-height: 27px;
-}
-
-.blurbBody p {
-  width: 100%;
-  line-height: 27px;
-}
-
-.blurb footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0;
-  width: 100%;
-  margin-top: 0;
-  line-height: 27px;
-  text-align: right;
-}
-
-@keyframes homeBlurbReveal {
-  from {
-    opacity: 0;
-    transform: translateX(var(--anim-slide-distance));
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @media (max-width: 900px) {
   .inner {
     padding: 80px 24px;
@@ -316,21 +211,8 @@
     padding-inline: 28px;
   }
 
-  .linksBody,
-  .blurbs {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-
-  .blurb {
-    width: 100%;
-  }
-
-  .blurbBubble {
-    width: 100%;
-  }
-
   .linksBody {
+    width: 100%;
     flex-wrap: wrap;
   }
 }

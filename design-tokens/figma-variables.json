@@ -366,16 +366,16 @@
           "name": "font/h2",
           "resolvedType": "FLOAT",
           "valuesByMode": {
-            "root": 32,
-            "a11y": 32,
-            "park": 32,
-            "blast": 32,
-            "tools": 32,
-            "teams": 32,
-            "tl-dr": 32,
-            "cs-drag-drop": 32,
-            "cs--2": 32,
-            "cs--3": 32
+            "root": 30,
+            "a11y": 30,
+            "park": 30,
+            "blast": 30,
+            "tools": 30,
+            "teams": 30,
+            "tl-dr": 30,
+            "cs-drag-drop": 30,
+            "cs--2": 30,
+            "cs--3": 30
           }
         },
         {
@@ -395,7 +395,7 @@
           }
         },
         {
-          "name": "font/lg",
+          "name": "font/h4",
           "resolvedType": "FLOAT",
           "valuesByMode": {
             "root": 22,
@@ -411,23 +411,7 @@
           }
         },
         {
-          "name": "font/line-spacing",
-          "resolvedType": "FLOAT",
-          "valuesByMode": {
-            "root": 38,
-            "a11y": 38,
-            "park": 38,
-            "blast": 38,
-            "tools": 38,
-            "teams": 38,
-            "tl-dr": 38,
-            "cs-drag-drop": 38,
-            "cs--2": 38,
-            "cs--3": 38
-          }
-        },
-        {
-          "name": "font/med",
+          "name": "font/lg",
           "resolvedType": "FLOAT",
           "valuesByMode": {
             "root": 18,
@@ -440,6 +424,38 @@
             "cs-drag-drop": 18,
             "cs--2": 18,
             "cs--3": 18
+          }
+        },
+        {
+          "name": "font/line-spacing",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 30,
+            "a11y": 30,
+            "park": 30,
+            "blast": 30,
+            "tools": 30,
+            "teams": 30,
+            "tl-dr": 30,
+            "cs-drag-drop": 30,
+            "cs--2": 30,
+            "cs--3": 30
+          }
+        },
+        {
+          "name": "font/med",
+          "resolvedType": "FLOAT",
+          "valuesByMode": {
+            "root": 16,
+            "a11y": 16,
+            "park": 16,
+            "blast": 16,
+            "tools": 16,
+            "teams": 16,
+            "tl-dr": 16,
+            "cs-drag-drop": 16,
+            "cs--2": 16,
+            "cs--3": 16
           }
         },
         {
@@ -510,16 +526,16 @@
           "name": "font/sm",
           "resolvedType": "FLOAT",
           "valuesByMode": {
-            "root": 16,
-            "a11y": 16,
-            "park": 16,
-            "blast": 16,
-            "tools": 16,
-            "teams": 16,
-            "tl-dr": 16,
-            "cs-drag-drop": 16,
-            "cs--2": 16,
-            "cs--3": 16
+            "root": 14,
+            "a11y": 14,
+            "park": 14,
+            "blast": 14,
+            "tools": 14,
+            "teams": 14,
+            "tl-dr": 14,
+            "cs-drag-drop": 14,
+            "cs--2": 14,
+            "cs--3": 14
           }
         },
         {
